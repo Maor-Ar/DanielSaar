@@ -4,18 +4,56 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+  --accent: #e98c00;
+  --muted: #6f747f;
+  --surface: #f1f1f2;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+html[data-font-scale="large"] {
+  font-size: 112.5%;
+}
+
+html[data-high-contrast="true"] {
+  --foreground: #000000;
+  --background: #ffffff;
+  --accent: #c46f00;
+}
+
+html[data-high-contrast="true"] body {
+  background: #fff;
+  color: #000;
+}
+
+html[data-underline-links="true"] a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+html[data-reduce-motion="true"] *,
+html[data-reduce-motion="true"] *::before,
+html[data-reduce-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-reduce-motion="false"]) {
+    scroll-behavior: auto;
+  }
+}
+
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:fixed focus:right-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg focus:outline focus:outline-2 focus:outline-[#e98c00];
 }

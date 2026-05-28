@@ -11,6 +11,20 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        accent: "var(--accent)",
+        muted: "var(--muted)",
+        surface: "var(--surface)",
+      },
+      fontFamily: {
+        sans: ["var(--font-assistant)", "Assistant", "system-ui", "sans-serif"],
+      },
+      screens: {
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1920px",
+      },
+      maxWidth: {
+        site: "1920px",
       },
     },
   },
