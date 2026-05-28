@@ -10,6 +10,7 @@ export const figma = {
   bookCover: { mobile: "/figma/91c95415-3079-445f-b9d5-099008b017c8.png", desktop: "/figma/d6bcf63b-b0fe-4f70-a554-b90b34e902ed.png" },
   bookSlidePages: "/figma/book-slide-pages.png",
   bookSlideBack: "/figma/book-slide-back.png",
+  bookCarouselDivider: "/figma/book-carousel-divider.svg",
   aboutPortrait: { mobile: "/figma/b0f2850f-e1fb-41a8-abc1-6c7c0f72aa76.jpg", desktop: "/figma/0bf30423-f131-4821-ba0e-3ff467a7fcdb.jpg" },
   waOutline: { mobile: "/figma/e5b0fc73-b2f4-4a9a-a763-3a6df9ab6ee7.svg", desktop: "/figma/20ee701e-de17-4a52-b881-0a4d69de9846.svg" },
   waSolid: { mobile: "/figma/b1b3d7ab-ed44-43b2-adb2-98e4f8fd5210.svg", desktop: "/figma/59e80a54-451d-4d92-8fc2-44dbb75ec4da.svg" },

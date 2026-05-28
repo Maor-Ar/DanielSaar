@@ -8,7 +8,7 @@ export function AboutSection() {
       <section aria-labelledby="about-heading" className="flex justify-center bg-slate-500/10 px-4 py-16 sm:px-8 lg:rounded-[30px] lg:px-[340px] lg:py-40">
         <div className="mx-auto flex w-full max-w-[1820px] flex-col-reverse items-center gap-12 lg:flex-row lg:gap-20">
           <div className="flex w-full max-w-2xl flex-col items-end gap-10 text-right lg:order-2 lg:max-w-none lg:gap-[60px]">
-            <div className="flex flex-col items-end gap-4">
+            <div className="flex flex-col items-start gap-4">
               <p className="text-xl font-semibold tracking-wide text-slate-900/70">הסיפור שלי</p>
               <h2 id="about-heading" className="text-3xl font-semibold text-slate-900 lg:text-[42px]">
                 דניאל סער
@@ -22,7 +22,7 @@ export function AboutSection() {
                 <p className="text-4xl font-bold text-[#e98c00] lg:text-[50px]">7</p>
                 <p className="text-sm text-slate-900/60">שנות ניסיון</p>
               </div>
-              <div className="flex max-w-md flex-1 items-center justify-center gap-2">
+              <div className="flex max-w-md flex-1 flex-row-reverse items-center justify-center gap-2">
                 <img src={figma.laurelLeft.mobile} alt="" className="h-16 w-8 shrink-0 object-contain lg:hidden" />
                 <img src={figma.laurelLeft.desktop} alt="" className="hidden h-[86px] w-[49px] shrink-0 object-contain lg:block" />
                 <div className="flex flex-col items-center gap-1 text-center text-sm text-slate-900 lg:text-base">
