@@ -1,5 +1,6 @@
 "use client";
 
+import AutoHeight from "embla-carousel-auto-height";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { figma } from "@/lib/figma-assets";
@@ -41,9 +42,10 @@ function QuoteCard({ t }: { t: Testimonial }) {
 
 function MobileCarousel({ items }: { items: Testimonial[] }) {
   const autoplay = useEmblaAutoplayPlugin({ delay: 4500 });
+  const autoHeight = AutoHeight();
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: "center", loop: true, direction: "rtl", autoHeight: true },
-    [autoplay],
+    { align: "center", loop: true, direction: "rtl" },
+    [autoplay, autoHeight],
   );
   useEmblaAutoplaySync(emblaApi);
   const [selected, setSelected] = useState(0);
@@ -54,12 +56,9 @@ function MobileCarousel({ items }: { items: Testimonial[] }) {
   useEffect(() => {
     if (!emblaApi) return;
     onSelect();
-    const updateHeight = () => emblaApi.reInit();
     emblaApi.on("select", onSelect);
-    emblaApi.on("select", updateHeight);
     return () => {
       emblaApi.off("select", onSelect);
-      emblaApi.off("select", updateHeight);
     };
   }, [emblaApi, onSelect]);
 
