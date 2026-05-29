@@ -1,10 +1,15 @@
 import type { MetadataRoute } from "next";
+import { getBasePath } from "@/lib/base-path";
+import { getSiteUrl } from "@/lib/site-url";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://danielsaar.example.com";
+export const dynamic = "force-static";
+
+const siteUrl = getSiteUrl();
+const basePath = getBasePath();
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/" },
+    rules: { userAgent: "*", allow: `${basePath || ""}/` },
     sitemap: `${siteUrl}/sitemap.xml`,
   };
 }

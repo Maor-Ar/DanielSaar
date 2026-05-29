@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# דניאל סער — סטוריטלינג עסקי ואישי
 
-## Getting Started
+Next.js marketing site (Hebrew, RTL), deployed to **GitHub Pages**.
 
-First, run the development server:
+**Live URL:** [https://maor-ar.github.io/DanielSaar/](https://maor-ar.github.io/DanielSaar/)
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) (no base path in dev).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Test production build locally (optional)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# PowerShell
+$env:NEXT_PUBLIC_BASE_PATH="/DanielSaar"
+$env:NEXT_PUBLIC_SITE_URL="https://maor-ar.github.io/DanielSaar"
+npm run build
+npx serve out
+```
 
-## Learn More
+## Deploy (GitHub Pages)
 
-To learn more about Next.js, take a look at the following resources:
+Deployments run automatically via [`.github/workflows/deploy-github-pages.yml`](.github/workflows/deploy-github-pages.yml) on push to `master` or `main`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### One-time GitHub setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push this repository to `Maor-Ar/DanielSaar`.
+2. **Settings → Pages → Build and deployment**
+3. **Source:** GitHub Actions (not “Deploy from a branch”).
+4. Push to `master` — the workflow builds and deploys.
 
-## Deploy on Vercel
+### Custom domain (later)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+When you have a domain:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Add the domain under **Settings → Pages → Custom domain**.
+2. Update workflow env in `deploy-github-pages.yml`:
+   - `NEXT_PUBLIC_SITE_URL=https://your-domain.com`
+   - `NEXT_PUBLIC_BASE_PATH=` (empty string — site at root)
+3. Update `next.config.ts` / remove base path from workflow.
+
+### Debugging failed deploys
+
+1. Open **Actions** → **Deploy to GitHub Pages** → failed run.
+2. Expand **Build static site** — build logs are printed in the step output.
+3. On failure, download the **debug-logs-*** artifact (`build.log`, `install.log`, `lint.log`).
+
+## Scripts
+
+| Command           | Description                    |
+|-------------------|--------------------------------|
+| `npm run dev`     | Local dev server               |
+| `npm run build`   | Production static export → `out/` |
+| `npm run start`   | Serve Node build (not used for Pages) |
+| `npm run lint`    | ESLint                         |

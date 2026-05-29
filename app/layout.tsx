@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Assistant } from "next/font/google";
 import { ClientOverlays } from "@/components/ClientOverlays";
 import { JsonLd } from "@/components/JsonLd";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const assistant = Assistant({
@@ -10,7 +11,7 @@ const assistant = Assistant({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://danielsaar.example.com";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

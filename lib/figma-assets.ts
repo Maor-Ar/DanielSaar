@@ -1,5 +1,7 @@
+import { withAssetPrefix } from "@/lib/base-path";
+
 /** Local paths for exported Figma MCP assets (see scripts/download-figma-assets.mjs). */
-export const figma = {
+const figmaAssets = {
   logo: { mobile: "/figma/995841c4-13ea-451f-8b9c-1618a05079ed.svg", desktop: "/figma/411f046f-4104-44e8-a194-bc7ce77ade6d.svg" },
   heroTitle: { mobile: "/figma/6aa5d505-a6db-4cd8-aa4d-7ba3ea0dd2e1.svg", desktop: "/figma/8b316a10-7052-4e16-ad42-9f85ec8301b5.svg" },
   heroPortrait: { mobile: "/figma/ec5bc50d-9e07-4673-bbd7-2e92d7bf9577.jpg", desktop: "/figma/a3b31bc3-fb5c-4df4-bf1e-1f58c80dbfa6.jpg" },
@@ -33,5 +35,7 @@ export const figma = {
   plusCircle: { mobile: "/figma/bfc1a7fa-1c19-4f8b-b0fc-13e42cd12cc1.svg", desktop: "/figma/bfc1a7fa-1c19-4f8b-b0fc-13e42cd12cc1.svg" },
   line94: "/figma/5f36014e-f229-46d6-9045-d8aaf096afc7.svg",
 } as const;
+
+export const figma = withAssetPrefix(figmaAssets);
 
 export type ResponsiveFigma = { mobile: string; desktop: string };

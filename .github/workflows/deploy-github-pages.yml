@@ -1,0 +1,130 @@
+# Build Next.js static export and deploy to GitHub Pages.
+# Live URL: https://maor-ar.github.io/DanielSaar/
+#
+# One-time repo setup: Settings → Pages → Build and deployment → Source: GitHub Actions
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  NEXT_PUBLIC_BASE_PATH: /DanielSaar
+  NEXT_PUBLIC_SITE_URL: https://maor-ar.github.io/DanielSaar
+  GITHUB_PAGES: "true"
+
+jobs:
+  build:
+    name: Build static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Environment summary
+        run: |
+          echo "=== Deployment target ==="
+          echo "Site URL: ${NEXT_PUBLIC_SITE_URL}"
+          echo "Base path: ${NEXT_PUBLIC_BASE_PATH}"
+          echo "Node: $(node --version 2>/dev/null || echo 'not installed yet')"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          set -euxo pipefail
+          npm ci 2>&1 | tee install.log
+        continue-on-error: false
+
+      - name: Lint (non-blocking)
+        run: |
+          set -uxo pipefail
+          npm run lint 2>&1 | tee lint.log || echo "::warning::Lint reported issues (see lint.log). Build continues."
+
+      - name: Build static export
+        run: |
+          set -euxo pipefail
+          echo "=== next.config.ts ==="
+          cat next.config.ts
+          echo "=== Starting next build ==="
+          npm run build 2>&1 | tee build.log
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+
+      - name: Verify build output
+        run: |
+          set -euxo pipefail
+          echo "=== out/ directory ==="
+          if [ ! -d out ]; then
+            echo "::error::Build did not produce an 'out' directory. Static export may have failed."
+            exit 1
+          fi
+          ls -la out | head -50
+          echo "---"
+          echo "File count: $(find out -type f | wc -l)"
+          echo "---"
+          if [ ! -f out/index.html ]; then
+            echo "::error::out/index.html is missing."
+            ls -la out || true
+            exit 1
+          fi
+          if [ ! -d out/figma ]; then
+            echo "::warning::out/figma/ not found — images may be missing."
+          fi
+          if [ ! -f out/.nojekyll ]; then
+            echo "::warning::out/.nojekyll missing — copying from public/"
+            cp public/.nojekyll out/.nojekyll 2>/dev/null || touch out/.nojekyll
+          fi
+          echo "=== index.html head (first 30 lines) ==="
+          head -30 out/index.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Upload debug logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-logs-${{ github.run_id }}
+          path: |
+            build.log
+            install.log
+            lint.log
+          if-no-files-found: ignore
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Deployment summary
+        run: |
+          echo "=== Deployed ==="
+          echo "URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "Expected: https://maor-ar.github.io/DanielSaar/"
