@@ -132,7 +132,7 @@ export function BusinessContentSection() {
 
                     <span className="inline-flex h-[22px] w-px items-center lg:h-[43px]">
 
-                      <img src={figma.lineVertical.desktop} alt="" className="h-full w-full rotate-90 object-contain" />
+                      <img src={figma.lineVertical.desktop} alt="" className="h-full w-full object-contain" />
 
                     </span>
 
@@ -150,7 +150,7 @@ export function BusinessContentSection() {
 
                     <span className="inline-flex h-[22px] w-px items-center lg:h-[43px]">
 
-                      <img src={figma.lineVertical.desktop} alt="" className="h-full w-full rotate-180 object-contain" />
+                      <img src={figma.lineVertical.desktop} alt="" className="h-full w-full object-contain" />
 
                     </span>
 

@@ -16,7 +16,7 @@ export type Testimonial = {
 
 function QuoteCard({ t }: { t: Testimonial }) {
   return (
-    <article className="flex h-full min-h-[220px] w-full max-w-[310px] flex-col items-end gap-4 rounded-lg border border-[#e98c00] bg-white p-4 shadow-[0px_4px_2px_rgba(0,0,0,0.25)] transition-shadow duration-300 hover:shadow-[0px_12px_28px_rgba(233,140,0,0.2)]">
+    <article className="flex min-h-[220px] w-full max-w-[310px] flex-col items-end gap-4 rounded-lg border border-[#e98c00] bg-white p-4 shadow-[0px_4px_2px_rgba(0,0,0,0.25)] transition-shadow duration-300 hover:shadow-[0px_12px_28px_rgba(233,140,0,0.2)]">
       <div className="size-[45px] shrink-0">
         <picture>
           <source media="(min-width: 1024px)" srcSet={figma.quote.desktop} />
@@ -41,7 +41,10 @@ function QuoteCard({ t }: { t: Testimonial }) {
 
 function MobileCarousel({ items }: { items: Testimonial[] }) {
   const autoplay = useEmblaAutoplayPlugin({ delay: 4500 });
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center", loop: true, direction: "rtl" }, [autoplay]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { align: "center", loop: true, direction: "rtl", autoHeight: true },
+    [autoplay],
+  );
   useEmblaAutoplaySync(emblaApi);
   const [selected, setSelected] = useState(0);
   const onSelect = useCallback(() => {
@@ -51,9 +54,12 @@ function MobileCarousel({ items }: { items: Testimonial[] }) {
   useEffect(() => {
     if (!emblaApi) return;
     onSelect();
+    const updateHeight = () => emblaApi.reInit();
     emblaApi.on("select", onSelect);
+    emblaApi.on("select", updateHeight);
     return () => {
       emblaApi.off("select", onSelect);
+      emblaApi.off("select", updateHeight);
     };
   }, [emblaApi, onSelect]);
 
@@ -71,7 +77,7 @@ function MobileCarousel({ items }: { items: Testimonial[] }) {
         <div className="flex">
           {items.map((t) => (
             <div className="min-w-0 shrink-0 grow-0 basis-full px-2" key={t.id}>
-              <div className="flex justify-center">
+              <div className="flex items-stretch justify-center">
                 <QuoteCard t={t} />
               </div>
             </div>

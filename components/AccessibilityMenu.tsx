@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AccessibilityIsaIcon } from "@/components/icons/AccessibilityIsaIcon";
 
 const LS = {
   font: "a11y-font-scale",
@@ -71,12 +72,13 @@ export function AccessibilityMenu() {
     <>
       <button
         type="button"
-        className="fixed bottom-6 right-6 z-[60] rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e98c00]"
+        className="fixed bottom-6 right-6 z-[60] size-12 overflow-hidden rounded-full border border-slate-300 bg-white p-0.5 shadow-lg transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e98c00]"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls="a11y-panel"
+        aria-label="תפריט נגישות"
       >
-        נגישות
+        <AccessibilityIsaIcon className="block size-full rounded-full" />
       </button>
       {open ? (
         <div

@@ -64,7 +64,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: a11yBoot }} />
         <JsonLd />
       </head>
-      <body className="min-h-screen font-sans antialiased">
+      <body className="min-h-screen font-sans antialiased" suppressHydrationWarning>
         <a href="#main-content" className="skip-link">
           דילוג לתוכן הראשי
         </a>

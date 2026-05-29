@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ChevronUpIcon } from "@/components/icons/ChevronUpIcon";
 
 export function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
@@ -21,7 +22,7 @@ export function ScrollToTopButton() {
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="חזרה לראש העמוד"
     >
-      ↑
+      <ChevronUpIcon className="size-5 text-[#e98c00]" />
     </button>
   );
 }

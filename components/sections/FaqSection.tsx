@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import { useId, useState } from "react";
 import { figma } from "@/lib/figma-assets";
 
@@ -25,6 +26,7 @@ const faqs = [
 export function FaqSection() {
   const baseId = useId();
   const [open, setOpen] = useState<number | null>(0);
+  const reduceMotion = useReducedMotion();
 
   return (
     <section aria-labelledby="faq-heading" className="bg-white px-4 py-16 sm:px-8 lg:py-20">
@@ -54,15 +56,25 @@ export function FaqSection() {
                     <span className="flex-1">{item.q}</span>
                   </button>
                 </h3>
-                <div
+                <motion.div
                   id={panelId}
                   role="region"
                   aria-labelledby={buttonId}
-                  hidden={!isOpen}
-                  className="pb-4 pt-1 text-right text-base leading-8 text-slate-900"
+                  aria-hidden={!isOpen}
+                  initial={false}
+                  animate={{
+                    height: isOpen ? "auto" : 0,
+                    opacity: isOpen ? 1 : 0,
+                  }}
+                  transition={
+                    reduceMotion
+                      ? { duration: 0 }
+                      : { duration: 0.25, ease: [0.22, 1, 0.36, 1] }
+                  }
+                  className="overflow-hidden text-right text-base leading-8 text-slate-900"
                 >
-                  {isOpen ? <p>{item.a}</p> : null}
-                </div>
+                  <p className="pb-4 pt-1">{item.a}</p>
+                </motion.div>
               </div>
             );
           })}
