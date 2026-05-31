@@ -37,12 +37,12 @@ export function HeroSection() {
                     </p>
                   </div>
                 </div>
-                <div className="flex shrink-0 flex-row flex-nowrap items-center gap-2.5">
+                <div className="flex w-full max-w-full shrink-0 origin-right flex-row flex-nowrap items-center gap-2.5 max-[440px]:scale-[0.88]">
                   <AnimatedButton
                     href={waBusiness}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-lg bg-[#e98c00] px-3 py-3 text-center text-sm font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)] sm:px-5 sm:text-[17px]"
+                    className="inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-lg bg-[#e98c00] px-3 py-3 text-center text-sm font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)] max-[440px]:gap-1.5 max-[440px]:px-2.5 max-[440px]:py-2.5 sm:px-5 sm:text-[17px]"
                   >
                     <span>ספרו לי על העסק שלכם</span>
                     <span className="relative inline-block size-5 shrink-0" aria-hidden>
@@ -56,7 +56,7 @@ export function HeroSection() {
                     href={waPersonal}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-lg border border-slate-900 bg-white px-3 py-3 text-center text-sm font-semibold text-slate-900 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:px-5 sm:text-[17px]"
+                    className="inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-lg border border-slate-900 px-3 py-3 text-center text-sm font-semibold text-slate-900 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-[440px]:gap-1.5 max-[440px]:px-2.5 max-[440px]:py-2.5 sm:px-5 sm:text-[17px]"
                   >
                     <span>ספרו לי את הסיפור שלכם</span>
                     <span className="relative inline-block size-5 shrink-0" aria-hidden>

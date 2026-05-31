@@ -52,7 +52,7 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
-const a11yBoot = `(function(){try{var r=document.documentElement;var f=localStorage.getItem('a11y-font-scale');var c=localStorage.getItem('a11y-high-contrast');var m=localStorage.getItem('a11y-reduce-motion');var u=localStorage.getItem('a11y-underline-links');r.dataset.fontScale=f==='large'?'large':'normal';r.dataset.highContrast=c==='true'?'true':'false';r.dataset.reduceMotion=m==='true'?'true':'false';r.dataset.underlineLinks=u==='true'?'true':'false';}catch(e){}})();`;
+const a11yBoot = `(function(){try{var r=document.documentElement;var f=localStorage.getItem('a11y-font-scale');var n=localStorage.getItem('a11y-negative-colors');var c=localStorage.getItem('a11y-high-contrast');var m=localStorage.getItem('a11y-reduce-motion');var u=localStorage.getItem('a11y-underline-links');var neg=n==='true'||c==='true';r.dataset.fontScale=f==='large'?'large':'normal';r.dataset.negativeColors=neg?'true':'false';r.dataset.reduceMotion=m==='true'?'true':'false';r.dataset.underlineLinks=u==='true'?'true':'false';}catch(e){}})();`;
 
 export default function RootLayout({
   children,

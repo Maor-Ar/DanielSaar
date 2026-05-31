@@ -23,15 +23,15 @@ html[data-font-scale="large"] {
   font-size: 112.5%;
 }
 
-html[data-high-contrast="true"] {
-  --foreground: #000000;
-  --background: #ffffff;
-  --accent: #c46f00;
+/* Inverts the whole page; media is re-inverted so photos keep natural colors */
+html[data-negative-colors="true"] {
+  filter: invert(1) hue-rotate(180deg);
 }
 
-html[data-high-contrast="true"] body {
-  background: #fff;
-  color: #000;
+html[data-negative-colors="true"] img,
+html[data-negative-colors="true"] picture,
+html[data-negative-colors="true"] video {
+  filter: invert(1) hue-rotate(180deg);
 }
 
 html[data-underline-links="true"] a {

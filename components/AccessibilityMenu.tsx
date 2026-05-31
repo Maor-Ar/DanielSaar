@@ -5,7 +5,7 @@ import { AccessibilityIsaIcon } from "@/components/icons/AccessibilityIsaIcon";
 
 const LS = {
   font: "a11y-font-scale",
-  contrast: "a11y-high-contrast",
+  negativeColors: "a11y-negative-colors",
   motion: "a11y-reduce-motion",
   underline: "a11y-underline-links",
 } as const;
@@ -31,11 +31,12 @@ function write(key: string, value: string | null) {
 function applyHtml() {
   const root = document.documentElement;
   const font = read(LS.font);
-  const contrast = read(LS.contrast);
+  const negativeColors =
+    read(LS.negativeColors) === "true" || read("a11y-high-contrast") === "true";
   const motion = read(LS.motion);
   const underline = read(LS.underline);
   root.dataset.fontScale = font === "large" ? "large" : "normal";
-  root.dataset.highContrast = contrast === "true" ? "true" : "false";
+  root.dataset.negativeColors = negativeColors ? "true" : "false";
   root.dataset.reduceMotion = motion === "true" ? "true" : "false";
   root.dataset.underlineLinks = underline === "true" ? "true" : "false";
 }
@@ -43,13 +44,13 @@ function applyHtml() {
 export function AccessibilityMenu() {
   const [open, setOpen] = useState(false);
   const [fontLarge, setFontLarge] = useState(false);
-  const [highContrast, setHighContrast] = useState(false);
+  const [negativeColors, setNegativeColors] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const [underline, setUnderline] = useState(false);
 
   useEffect(() => {
     setFontLarge(read(LS.font) === "large");
-    setHighContrast(read(LS.contrast) === "true");
+    setNegativeColors(read(LS.negativeColors) === "true" || read("a11y-high-contrast") === "true");
     setReduceMotion(read(LS.motion) === "true");
     setUnderline(read(LS.underline) === "true");
     applyHtml();
@@ -57,7 +58,7 @@ export function AccessibilityMenu() {
 
   useEffect(() => {
     applyHtml();
-  }, [fontLarge, highContrast, reduceMotion, underline]);
+  }, [fontLarge, negativeColors, reduceMotion, underline]);
 
   useEffect(() => {
     if (!open) return;
@@ -102,14 +103,15 @@ export function AccessibilityMenu() {
               />
             </label>
             <label className="flex items-center justify-between gap-2">
-              <span>ניגודיות גבוהה</span>
+              <span>צבעים שליליים</span>
               <input
                 type="checkbox"
-                checked={highContrast}
+                checked={negativeColors}
                 onChange={(e) => {
                   const v = e.target.checked;
-                  setHighContrast(v);
-                  write(LS.contrast, v ? "true" : "false");
+                  setNegativeColors(v);
+                  write(LS.negativeColors, v ? "true" : "false");
+                  write("a11y-high-contrast", null);
                 }}
               />
             </label>
