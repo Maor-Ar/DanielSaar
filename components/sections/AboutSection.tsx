@@ -21,11 +21,11 @@ export function AboutSection() {
               </p>
             </div>
             <div className="flex w-full flex-col items-center gap-10 xl:flex-row xl:items-center xl:justify-between xl:gap-20">
-              <div className="order-2 flex flex-col items-center gap-1 xl:order-1">
+              <div className="order-2 flex flex-col items-center gap-1">
                 <p className="text-4xl font-bold text-[#e98c00] xl:text-[50px]">7</p>
                 <p className="text-sm text-slate-900/60">שנות ניסיון</p>
               </div>
-              <div className="order-1 flex w-full max-w-md flex-row-reverse items-center justify-center gap-2 xl:order-2 xl:flex-1">
+              <div className="order-1 flex w-full max-w-md flex-row-reverse items-center justify-center gap-2 xl:flex-1">
                 <img src={figma.laurelLeft.mobile} alt="" className="h-16 w-8 shrink-0 object-contain xl:hidden" />
                 <img src={figma.laurelLeft.desktop} alt="" className="hidden h-[86px] w-[49px] shrink-0 object-contain xl:block" />
                 <div className="flex flex-col items-center gap-1 text-center text-sm text-slate-900 xl:text-base">
