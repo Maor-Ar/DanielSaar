@@ -2,9 +2,10 @@ import { MotionFade } from "@/components/MotionFade";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { ResponsiveFigmaPicture } from "@/components/ResponsiveFigmaPicture";
 import { figma } from "@/lib/figma-assets";
+import { WHATSAPP_MESSAGES, whatsappUrl } from "@/lib/whatsapp";
 
-const waBusiness = process.env.NEXT_PUBLIC_WHATSAPP_BUSINESS_URL ?? "https://wa.me/";
-const waPersonal = process.env.NEXT_PUBLIC_WHATSAPP_PERSONAL_URL ?? "https://wa.me/";
+const waBusiness = whatsappUrl(WHATSAPP_MESSAGES.business);
+const waPersonal = whatsappUrl(WHATSAPP_MESSAGES.personal);
 
 export function HeroSection() {
   return (

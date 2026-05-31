@@ -6,7 +6,9 @@ import { AnimatedButton } from "@/components/AnimatedButton";
 
 
 
-const waBusiness = process.env.NEXT_PUBLIC_WHATSAPP_BUSINESS_URL ?? "https://wa.me/";
+import { WHATSAPP_MESSAGES, whatsappUrl } from "@/lib/whatsapp";
+
+const waBusiness = whatsappUrl(WHATSAPP_MESSAGES.business);
 
 
 

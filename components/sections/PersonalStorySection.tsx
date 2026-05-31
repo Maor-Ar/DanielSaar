@@ -3,7 +3,9 @@ import { figma } from "@/lib/figma-assets";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { BookCoverCarousel } from "@/components/BookCoverCarousel";
 
-const waPersonal = process.env.NEXT_PUBLIC_WHATSAPP_PERSONAL_URL ?? "https://wa.me/";
+import { WHATSAPP_MESSAGES, whatsappUrl } from "@/lib/whatsapp";
+
+const waPersonal = whatsappUrl(WHATSAPP_MESSAGES.personal);
 
 const steps = [
   { n: "01", title: "אפיון ואיסוף חומרים", body: "פגישת היכרות איתכם ועם הסיפור שלכם ואיסוף חומרים רלוונטים", titleClass: "text-[22px] lg:text-2xl" },
