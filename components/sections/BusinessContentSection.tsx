@@ -3,6 +3,7 @@ import { MotionFade } from "@/components/MotionFade";
 import { figma } from "@/lib/figma-assets";
 
 import { AnimatedButton } from "@/components/AnimatedButton";
+import { StepNumberLabel } from "@/components/StepNumberLabel";
 
 
 
@@ -258,11 +259,11 @@ export function BusinessContentSection() {
 
               >
 
-                <p className="w-full text-5xl font-bold text-[#e98c00] lg:text-[60px]">.{s.n}</p>
+                <StepNumberLabel n={s.n} className="text-5xl lg:text-[60px]" />
 
-                <h3 className="text-xl font-bold text-slate-900 lg:text-2xl">{s.title}</h3>
+                <h3 className="w-full text-right text-xl font-bold text-slate-900 lg:text-2xl">{s.title}</h3>
 
-                <p className="text-base leading-7 text-slate-900 lg:text-lg">{s.body}</p>
+                <p className="w-full text-right text-base leading-7 text-slate-900 lg:text-lg">{s.body}</p>
 
               </div>
 

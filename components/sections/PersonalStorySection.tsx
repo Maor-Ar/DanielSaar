@@ -2,6 +2,7 @@ import { MotionFade } from "@/components/MotionFade";
 import { figma } from "@/lib/figma-assets";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { BookCoverCarousel } from "@/components/BookCoverCarousel";
+import { StepNumberLabel } from "@/components/StepNumberLabel";
 
 import { WHATSAPP_MESSAGES, whatsappUrl } from "@/lib/whatsapp";
 
@@ -88,9 +89,11 @@ export function PersonalStorySection() {
                 key={s.n}
                 className={`flex w-full flex-col items-start gap-1.5 rounded-lg bg-white p-4 text-right shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:w-[310px] lg:gap-1.5 lg:p-4 ${s.n === "01" || s.n === "02" || s.n === "04" ? "min-h-[237px] lg:min-h-0" : ""} ${s.cardClass ?? ""}`}
               >
-                <p className="w-full text-[60px] font-bold leading-none text-[#e98c00]">.{s.n}</p>
-                <h3 className={`font-bold text-slate-900 ${s.titleClass}`}>{s.title}</h3>
-                <p className="text-xl font-normal leading-normal text-slate-900 lg:text-xl lg:leading-7">{s.body}</p>
+                <StepNumberLabel n={s.n} className="text-[60px]" />
+                <h3 className={`w-full text-right font-bold text-slate-900 ${s.titleClass}`}>{s.title}</h3>
+                <p className="w-full text-right text-xl font-normal leading-normal text-slate-900 lg:text-xl lg:leading-7">
+                  {s.body}
+                </p>
               </div>
             ))}
           </div>

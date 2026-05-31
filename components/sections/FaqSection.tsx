@@ -25,7 +25,7 @@ const faqs = [
 
 export function FaqSection() {
   const baseId = useId();
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
   const reduceMotion = useReducedMotion();
 
   return (

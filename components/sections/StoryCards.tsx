@@ -23,23 +23,23 @@ export function PersonalStoryCard() {
         </div>
       </div>
       <div className="flex flex-col gap-8 bg-white px-4 py-6 text-right sm:px-6 lg:min-h-[372px] lg:px-6 lg:pb-8 lg:pt-8">
-        <div className="flex flex-col items-end gap-6">
-          <div>
+        <div className="flex w-full flex-col items-start gap-6">
+          <div className="w-full text-right">
             <h3 className="text-2xl font-bold text-slate-900 lg:text-[34px]">סיפור אישי</h3>
             <p className="mt-2 text-lg font-semibold text-slate-900/60 lg:text-2xl">הפיכת זיכרונות וחוויות חיים לספר כתוב</p>
           </div>
           <ul className="flex w-full flex-col gap-4">
-            <li className="flex items-center justify-end gap-4 text-base font-semibold text-slate-900">
-              <span>שימור מורשת</span>
+            <li className="flex items-center justify-start gap-4 text-base font-semibold text-slate-900">
               <IconPair mobile={figma.iconPersonal1.mobile} desktop={figma.iconPersonal1.desktop} />
+              <span>שימור מורשת</span>
             </li>
-            <li className="flex items-center justify-end gap-4 text-base font-semibold text-slate-900">
-              <span>מתנה משמעותית</span>
+            <li className="flex items-center justify-start gap-4 text-base font-semibold text-slate-900">
               <IconPair mobile={figma.iconPersonal2.mobile} desktop={figma.iconPersonal2.desktop} />
+              <span>מתנה משמעותית</span>
             </li>
-            <li className="flex items-center justify-end gap-4 text-base font-semibold text-slate-900">
-              <span>ליווי קשוב</span>
+            <li className="flex items-center justify-start gap-4 text-base font-semibold text-slate-900">
               <IconPair mobile={figma.iconPersonal3.mobile} desktop={figma.iconPersonal3.desktop} />
+              <span>ליווי קשוב</span>
             </li>
           </ul>
         </div>
@@ -47,11 +47,11 @@ export function PersonalStoryCard() {
           href="#personal-story"
           className="mx-auto inline-flex items-center gap-5 rounded-xl border border-slate-900 bg-white px-10 py-3.5 text-[15px] font-semibold text-slate-900 shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:px-40"
         >
-          <span className="inline-flex rotate-180">
+          <span>לקרוא על זה עוד</span>
+          <span className="inline-flex shrink-0 rotate-180" aria-hidden>
             <img src={figma.arrowLeft.mobile} alt="" width={10} height={10} className="lg:hidden" />
             <img src={figma.arrowLeft.desktop} alt="" width={10} height={10} className="hidden lg:inline" />
           </span>
-          לקרוא על זה עוד
         </AnimatedButton>
       </div>
     </article>
@@ -74,23 +74,23 @@ export function BusinessStoryCard() {
         <p className="text-center text-[10px] text-slate-900/60 lg:absolute lg:left-1/2 lg:top-3 lg:-translate-x-1/2 lg:whitespace-nowrap">
           הלוגואים מוצגים להמחשת ניסיון בפרויקטים, כל הזכויות שמורות לבעליהם ללא קשר שותפות
         </p>
-        <div className="flex flex-col items-end gap-6 lg:mt-6">
-          <div>
+        <div className="flex w-full flex-col items-start gap-6 lg:mt-6">
+          <div className="w-full text-right">
             <h3 className="text-2xl font-bold text-slate-900 lg:text-[34px]">סיפור עסקי</h3>
             <p className="mt-2 text-lg font-semibold text-slate-900/60 lg:text-2xl">בניית אסטרטגיית תוכן לעסקים</p>
           </div>
           <ul className="flex w-full flex-col gap-4">
-            <li className="flex items-center justify-end gap-4 text-base font-semibold text-slate-900">
-              <span>בניית שפה מיתוגית אחידה</span>
+            <li className="flex items-center justify-start gap-4 text-base font-semibold text-slate-900">
               <IconPair mobile={figma.iconBusiness1.mobile} desktop={figma.iconBusiness1.desktop} />
+              <span>בניית שפה מיתוגית אחידה</span>
             </li>
-            <li className="flex items-center justify-end gap-4 text-base font-semibold text-slate-900">
-              <span>דיוק המסר העסקי</span>
+            <li className="flex items-center justify-start gap-4 text-base font-semibold text-slate-900">
               <IconPair mobile={figma.iconBusiness2.mobile} desktop={figma.iconBusiness2.desktop} />
+              <span>דיוק המסר העסקי</span>
             </li>
-            <li className="flex items-center justify-end gap-4 text-base font-semibold text-slate-900">
-              <span>התאמה לקהל היעד</span>
+            <li className="flex items-center justify-start gap-4 text-base font-semibold text-slate-900">
               <IconPair mobile={figma.iconBusiness3.mobile} desktop={figma.iconBusiness3.desktop} />
+              <span>התאמה לקהל היעד</span>
             </li>
           </ul>
         </div>
@@ -98,11 +98,11 @@ export function BusinessStoryCard() {
           href="#business-content"
           className="mx-auto inline-flex items-center gap-5 rounded-xl bg-[#e98c00] px-10 py-3.5 text-[15px] font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:px-40"
         >
-          <span className="inline-flex rotate-180">
+          <span>לקרוא על זה עוד</span>
+          <span className="inline-flex shrink-0 rotate-180" aria-hidden>
             <img src={figma.arrowLeftOrange.mobile} alt="" width={10} height={10} className="lg:hidden" />
             <img src={figma.arrowLeftOrange.desktop} alt="" width={10} height={10} className="hidden lg:inline" />
           </span>
-          לקרוא על זה עוד
         </AnimatedButton>
       </div>
     </article>

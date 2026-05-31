@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { figma } from "@/lib/figma-assets";
+import { EmblaCarouselArrows } from "@/components/EmblaCarouselArrows";
 import { useEmblaAutoplayPlugin, useEmblaAutoplaySync } from "@/lib/use-embla-autoplay";
 import { useEmblaKeyboard } from "@/lib/use-embla-keyboard";
 
@@ -58,6 +59,7 @@ export function BookCoverCarousel() {
       tabIndex={0}
     >
       <div className="relative h-[277px] overflow-hidden rounded-[20px] lg:h-[595px]">
+        <EmblaCarouselArrows emblaApi={emblaApi} variant="overlay" />
         <div className="relative h-full w-full" ref={emblaRef}>
           <div className="flex h-full">
             {slides.map((slide, i) => (
