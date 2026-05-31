@@ -3,7 +3,7 @@ import { MotionFade } from "@/components/MotionFade";
 import { figma } from "@/lib/figma-assets";
 
 import { AnimatedButton } from "@/components/AnimatedButton";
-import { StepNumberLabel } from "@/components/StepNumberLabel";
+import { ProcessStepCards } from "@/components/ProcessStepCards";
 
 
 
@@ -247,29 +247,7 @@ export function BusinessContentSection() {
 
 
 
-          <div className="flex w-full max-w-[312px] flex-col items-start gap-5 self-start sm:max-w-none lg:max-w-none lg:flex-row lg:flex-nowrap lg:items-stretch lg:justify-center lg:gap-[72px]">
-
-            {steps.map((s) => (
-
-              <div
-
-                key={s.n}
-
-                className="flex flex-col items-start gap-1.5 rounded-lg bg-white p-4 text-right shadow-[0px_4px_2px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:-translate-y-1 lg:w-[310px]"
-
-              >
-
-                <StepNumberLabel n={s.n} className="text-5xl lg:text-[60px]" />
-
-                <h3 className="w-full text-right text-xl font-bold text-slate-900 lg:text-2xl">{s.title}</h3>
-
-                <p className="w-full text-right text-base leading-7 text-slate-900 lg:text-lg">{s.body}</p>
-
-              </div>
-
-            ))}
-
-          </div>
+          <ProcessStepCards steps={steps} />
 
         </div>
 

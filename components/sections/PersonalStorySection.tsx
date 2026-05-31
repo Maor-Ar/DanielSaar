@@ -2,23 +2,21 @@ import { MotionFade } from "@/components/MotionFade";
 import { figma } from "@/lib/figma-assets";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { BookCoverCarousel } from "@/components/BookCoverCarousel";
-import { StepNumberLabel } from "@/components/StepNumberLabel";
+import { ProcessStepCards } from "@/components/ProcessStepCards";
 
 import { WHATSAPP_MESSAGES, whatsappUrl } from "@/lib/whatsapp";
 
 const waPersonal = whatsappUrl(WHATSAPP_MESSAGES.personal);
 
 const steps = [
-  { n: "01", title: "אפיון ואיסוף חומרים", body: "פגישת היכרות איתכם ועם הסיפור שלכם ואיסוף חומרים רלוונטים", titleClass: "text-[22px] lg:text-2xl" },
-  { n: "02", title: "סדרת מפגשי תוכן", body: "קיום ראיונות עומק אישיים לזיקוק רגעי המפתח בסיפור שלכם", titleClass: "text-2xl" },
+  { n: "01", title: "אפיון ואיסוף חומרים", body: "פגישת היכרות איתכם ועם הסיפור שלכם ואיסוף חומרים רלוונטים" },
+  { n: "02", title: "סדרת מפגשי תוכן", body: "קיום ראיונות עומק אישיים לזיקוק רגעי המפתח בסיפור שלכם" },
   {
     n: "03",
     title: "כתיבת הסיפור",
     body: "בניית שלד הסיפור, כתיבת הטקסט ועיצוב הספר בשילוב התמונות והמסמכים שסיפקתם וליטוש מדויק של הפרטים יחד איתכם עד לתוצר הסופי",
-    titleClass: "text-2xl",
-    cardClass: "lg:min-h-0",
   },
-  { n: "04", title: "הוצאה לאור", body: "בקרת איכות סופית ושליחת הספר להדפסה מקצועית בכמות העותקים שתבחרו", titleClass: "text-2xl" },
+  { n: "04", title: "הוצאה לאור", body: "בקרת איכות סופית ושליחת הספר להדפסה מקצועית בכמות העותקים שתבחרו" },
 ];
 
 const bullets = [
@@ -83,20 +81,7 @@ export function PersonalStorySection() {
             </div>
           </div>
 
-          <div className="flex w-full max-w-[312px] flex-col items-start gap-5 self-center sm:max-w-none lg:max-w-none lg:flex-row lg:flex-nowrap lg:items-stretch lg:justify-center lg:gap-[71px]">
-            {steps.map((s) => (
-              <div
-                key={s.n}
-                className={`flex w-full flex-col items-start gap-1.5 rounded-lg bg-white p-4 text-right shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:w-[310px] lg:gap-1.5 lg:p-4 ${s.n === "01" || s.n === "02" || s.n === "04" ? "min-h-[237px] lg:min-h-0" : ""} ${s.cardClass ?? ""}`}
-              >
-                <StepNumberLabel n={s.n} className="text-[60px]" />
-                <h3 className={`w-full text-right font-bold text-slate-900 ${s.titleClass}`}>{s.title}</h3>
-                <p className="w-full text-right text-xl font-normal leading-normal text-slate-900 lg:text-xl lg:leading-7">
-                  {s.body}
-                </p>
-              </div>
-            ))}
-          </div>
+          <ProcessStepCards steps={steps} />
         </div>
       </section>
     </MotionFade>

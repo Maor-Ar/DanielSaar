@@ -40,12 +40,12 @@ function QuoteCard({ t }: { t: Testimonial }) {
   );
 }
 
-/** Mobile-only carousel (one card per view, loop + dots). */
+/** Mobile-only carousel — centered card with peek of neighbors, loop + dots. */
 function MobileTestimonialsCarousel({ items }: { items: Testimonial[] }) {
   const autoplay = useEmblaAutoplayPlugin({ delay: 4500 });
   const autoHeight = AutoHeight();
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: "center", loop: true, direction: "rtl" },
+    { align: "center", loop: true, direction: "rtl", containScroll: "trimSnaps" },
     [autoplay, autoHeight],
   );
   useEmblaAutoplaySync(emblaApi);
@@ -67,24 +67,29 @@ function MobileTestimonialsCarousel({ items }: { items: Testimonial[] }) {
 
   return (
     <div
-      className="w-full lg:hidden"
+      className="-mx-4 w-[calc(100%+2rem)] sm:-mx-8 sm:w-[calc(100%+4rem)] lg:hidden"
       role="region"
       aria-roledescription="carousel"
       aria-label="חוות דעת"
       tabIndex={0}
     >
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="overflow-hidden px-1" ref={emblaRef}>
         <div className="flex touch-pan-y">
-          {items.map((t) => (
-            <div className="min-w-0 shrink-0 grow-0 basis-full px-2" key={t.id}>
-              <div className="flex items-stretch justify-center">
+          {items.map((t, i) => (
+            <div
+              className={`min-w-0 shrink-0 grow-0 basis-[88%] px-1 transition-opacity duration-300 sm:basis-[86%] ${
+                selected === i ? "opacity-100" : "opacity-50"
+              }`}
+              key={t.id}
+            >
+              <div className="flex justify-center">
                 <QuoteCard t={t} />
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="mt-4 flex justify-center gap-2" role="tablist" aria-label="מעבר בין חוות דעת">
+      <div className="mx-4 mt-4 flex justify-center gap-2 sm:mx-8" role="tablist" aria-label="מעבר בין חוות דעת">
         {items.map((_, i) => (
           <button
             key={i}
