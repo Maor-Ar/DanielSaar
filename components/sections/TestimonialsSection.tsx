@@ -3,7 +3,6 @@
 import AutoHeight from "embla-carousel-auto-height";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-import { EmblaCarouselArrows } from "@/components/EmblaCarouselArrows";
 import { figma } from "@/lib/figma-assets";
 import { useEmblaAutoplayPlugin, useEmblaAutoplaySync } from "@/lib/use-embla-autoplay";
 import { useEmblaKeyboard } from "@/lib/use-embla-keyboard";
@@ -41,18 +40,12 @@ function QuoteCard({ t }: { t: Testimonial }) {
   );
 }
 
-function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
+/** Mobile-only carousel (one card per view, loop + dots). */
+function MobileTestimonialsCarousel({ items }: { items: Testimonial[] }) {
   const autoplay = useEmblaAutoplayPlugin({ delay: 4500 });
   const autoHeight = AutoHeight();
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      align: "center",
-      loop: true,
-      direction: "rtl",
-      breakpoints: {
-        "(min-width: 1024px)": { align: "start" },
-      },
-    },
+    { align: "center", loop: true, direction: "rtl" },
     [autoplay, autoHeight],
   );
   useEmblaAutoplaySync(emblaApi);
@@ -74,28 +67,24 @@ function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
 
   return (
     <div
-      className="relative mx-auto w-full max-w-[1320px]"
+      className="w-full lg:hidden"
       role="region"
       aria-roledescription="carousel"
       aria-label="חוות דעת"
       tabIndex={0}
     >
-      <EmblaCarouselArrows emblaApi={emblaApi} />
-      <div className="overflow-hidden lg:mx-12" ref={emblaRef}>
-        <div className="flex touch-pan-y lg:gap-10">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex touch-pan-y">
           {items.map((t) => (
-            <div
-              className="min-w-0 shrink-0 grow-0 basis-full px-2 lg:basis-[310px] lg:px-0"
-              key={t.id}
-            >
-              <div className="flex items-stretch justify-center lg:justify-start">
+            <div className="min-w-0 shrink-0 grow-0 basis-full px-2" key={t.id}>
+              <div className="flex items-stretch justify-center">
                 <QuoteCard t={t} />
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="mt-4 flex justify-center gap-2 lg:hidden" role="tablist" aria-label="מעבר בין חוות דעת">
+      <div className="mt-4 flex justify-center gap-2" role="tablist" aria-label="מעבר בין חוות דעת">
         {items.map((_, i) => (
           <button
             key={i}
@@ -119,7 +108,12 @@ export function TestimonialsSection({ items }: { items: Testimonial[] }) {
         <h2 id="testimonials-heading" className="text-center text-3xl font-semibold text-slate-900 lg:text-[40px]">
           חוות דעת
         </h2>
-        <TestimonialsCarousel items={items} />
+        <MobileTestimonialsCarousel items={items} />
+        <div className="hidden flex-wrap justify-center gap-8 lg:flex lg:justify-center lg:gap-10">
+          {items.map((t) => (
+            <QuoteCard key={t.id} t={t} />
+          ))}
+        </div>
         <a
           href="https://www.google.com/maps"
           className="inline-flex items-center justify-center gap-2 text-xl font-semibold text-[#e98c00] transition-opacity hover:opacity-80"
