@@ -1,3 +1,4 @@
+import { FooterLegalLinks } from "@/components/FooterLegalLinks";
 import { figma } from "@/lib/figma-assets";
 import { ResponsiveFigmaPicture } from "@/components/ResponsiveFigmaPicture";
 
@@ -8,6 +9,7 @@ export function SiteFooter() {
         <div className="relative h-[34px] w-[138px] shrink-0">
           <ResponsiveFigmaPicture asset={figma.logo} alt="דניאל סער" width={138} height={34} className="[&_img]:object-contain" />
         </div>
+        <FooterLegalLinks />
         {/* Social links hidden per spec — keep landmark for future use */}
         <nav aria-label="רשתות חברתיות" className="hidden" aria-hidden="true">
           <ul>
