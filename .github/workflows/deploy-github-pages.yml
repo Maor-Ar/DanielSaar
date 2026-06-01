@@ -1,5 +1,5 @@
 # Build Next.js static export and deploy to GitHub Pages.
-# Live URL: https://maor-ar.github.io/DanielSaar/
+# Live URL: https://danielsaar.co.il/
 #
 # One-time repo setup: Settings → Pages → Build and deployment → Source: GitHub Actions
 
@@ -20,8 +20,8 @@ permissions:
   id-token: write
 
 env:
-  NEXT_PUBLIC_BASE_PATH: /DanielSaar
-  NEXT_PUBLIC_SITE_URL: https://maor-ar.github.io/DanielSaar
+  NEXT_PUBLIC_BASE_PATH: ""
+  NEXT_PUBLIC_SITE_URL: https://danielsaar.co.il
   GITHUB_PAGES: "true"
 
 jobs:
@@ -127,4 +127,4 @@ jobs:
         run: |
           echo "=== Deployed ==="
           echo "URL: ${{ steps.deployment.outputs.page_url }}"
-          echo "Expected: https://maor-ar.github.io/DanielSaar/"
+          echo "Expected: https://danielsaar.co.il/"

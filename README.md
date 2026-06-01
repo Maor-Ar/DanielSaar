@@ -2,7 +2,7 @@
 
 Next.js marketing site (Hebrew, RTL), deployed to **GitHub Pages**.
 
-**Live URL:** [https://maor-ar.github.io/DanielSaar/](https://maor-ar.github.io/DanielSaar/)
+**Live URL:** [https://danielsaar.co.il/](https://danielsaar.co.il/)
 
 ## Development
 
@@ -17,8 +17,8 @@ Open [http://localhost:3000](http://localhost:3000) (no base path in dev).
 
 ```bash
 # PowerShell
-$env:NEXT_PUBLIC_BASE_PATH="/DanielSaar"
-$env:NEXT_PUBLIC_SITE_URL="https://maor-ar.github.io/DanielSaar"
+$env:NEXT_PUBLIC_SITE_URL="https://danielsaar.co.il"
+$env:NEXT_PUBLIC_BASE_PATH=""
 npm run build
 npx serve out
 ```
@@ -32,17 +32,13 @@ Deployments run automatically via [`.github/workflows/deploy-github-pages.yml`](
 1. Push this repository to `Maor-Ar/DanielSaar`.
 2. **Settings → Pages → Build and deployment**
 3. **Source:** GitHub Actions (not “Deploy from a branch”).
-4. Push to `master` — the workflow builds and deploys.
+4. **Custom domain:** `danielsaar.co.il` (DNS must point to GitHub Pages; `public/CNAME` is included in the build).
+5. Push to `master` — the workflow builds and deploys.
 
-### Custom domain (later)
+Production env (in the workflow):
 
-When you have a domain:
-
-1. Add the domain under **Settings → Pages → Custom domain**.
-2. Update workflow env in `deploy-github-pages.yml`:
-   - `NEXT_PUBLIC_SITE_URL=https://your-domain.com`
-   - `NEXT_PUBLIC_BASE_PATH=` (empty string — site at root)
-3. Update `next.config.ts` / remove base path from workflow.
+- `NEXT_PUBLIC_SITE_URL=https://danielsaar.co.il`
+- `NEXT_PUBLIC_BASE_PATH=` (empty — site at domain root)
 
 ### Debugging failed deploys
 
