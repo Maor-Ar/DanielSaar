@@ -1,7 +1,7 @@
 import type { LegalDocument } from "@/content/legal/types";
 import { siteOperator } from "@/lib/legal/site-operator";
 
-const { name, siteName, siteUrl, phoneDisplay, email, businessId, address, lastUpdated } = siteOperator;
+const { name, siteName, siteUrl, phoneDisplay, email, address, lastUpdated } = siteOperator;
 
 export const privacyPolicyDocument: LegalDocument = {
   id: "privacy-policy",
@@ -21,7 +21,6 @@ export const privacyPolicyDocument: LegalDocument = {
       title: "מי אנחנו",
       paragraphs: [
         `שם המפעיל: ${name}`,
-        `מספר עוסק / ח.פ.: ${businessId}`,
         `כתובת: ${address}`,
         `דוא"ל לפניות בנושא פרטיות: ${email}`,
         `טלפון: ${phoneDisplay}`,
