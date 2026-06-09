@@ -6,15 +6,29 @@ import { WHATSAPP_MESSAGES, whatsappUrl } from "@/lib/whatsapp";
 
 const waHero = whatsappUrl(WHATSAPP_MESSAGES.hero);
 
+/** Hero layout from Figma Website For Maor → Servics Title → 8855:13232 */
 export function HeroSection() {
   return (
     <MotionFade eager>
       <section aria-labelledby="hero-heading" className="flex justify-center px-4 pb-12 pt-4 sm:px-6 lg:px-10 lg:pb-24">
         <div className="w-full max-w-[1820px] rounded-[30px] bg-[#f1f1f2]">
           <div className="rounded-[30px] bg-slate-500/10 py-16 sm:py-24 lg:py-[200px]">
-            <div className="mx-auto flex max-w-[1060px] flex-col-reverse items-center justify-center gap-12 lg:flex-row lg:justify-around lg:gap-14">
-              <div className="flex w-full max-w-xl flex-col items-start gap-10 px-2 sm:px-0 lg:order-2 lg:w-auto lg:max-w-[420px] lg:gap-9">
-                <div className="flex w-full flex-col items-start gap-5 pl-4 pr-2 sm:pl-0 sm:pr-0">
+            <div className="mx-auto flex max-w-[838px] flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-center lg:gap-20">
+              {/* Portrait — right on desktop RTL */}
+              <div className="relative h-[287px] w-[192px] shrink-0 overflow-hidden rounded-[20px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:h-[360px] sm:w-56 lg:h-[430px] lg:w-[287px]">
+                <ResponsiveFigmaPicture
+                  asset={figma.heroPortrait}
+                  alt="דניאל סער"
+                  width={287}
+                  height={430}
+                  priority
+                  className="h-full w-full [&_img]:h-full [&_img]:w-full [&_img]:object-contain"
+                />
+              </div>
+
+              {/* Text + CTA — 471px column, items-end (left edge in RTL) */}
+              <div className="flex w-full max-w-[471px] flex-col items-end gap-10">
+                <div className="flex w-full flex-col items-end gap-5">
                   <div className="relative h-[64px] w-[234px] shrink-0">
                     <ResponsiveFigmaPicture
                       asset={figma.heroTitle}
@@ -24,53 +38,28 @@ export function HeroSection() {
                       className="[&_img]:object-contain"
                     />
                   </div>
-                  <div className="flex w-full flex-col items-start gap-2.5 text-right">
-                    <h1 id="hero-heading" className="w-full text-2xl font-semibold text-slate-900 sm:text-3xl lg:text-[34px]">
+                  <div className="flex w-full flex-col items-end gap-2.5 text-right">
+                    <h1 id="hero-heading" className="w-full text-[28px] font-semibold text-slate-900 sm:text-[32px] lg:text-[34px]">
                       סטוריטלינג עסקי ואישי
                     </h1>
-                    <p className="w-full text-xl text-slate-900 sm:text-xl lg:max-w-[400px] lg:text-2xl">
-                      כתיבה, עריכה ותכנון תוכן עבור עסקים
-                      <br className="sm:hidden" />
-                      <span className="hidden sm:inline"> </span>
-                      ואנשים פרטיים
+                    <p className="w-full text-lg text-slate-900 sm:text-xl lg:text-2xl">
+                      כתיבה, עריכה ותכנון תוכן עבור עסקים ואנשים פרטיים
                     </p>
                   </div>
                 </div>
-                <div className="w-full pl-4 pr-2 sm:pl-0 sm:pr-0">
+
+                <div className="flex w-full max-w-[462px] justify-end">
                   <AnimatedButton
                     href={waHero}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="לקחת אותי לשיחה בוואטסאפ"
-                    className="inline-flex w-full max-w-[340px] items-center justify-center gap-2.5 whitespace-nowrap rounded-lg border border-[#e98c00] bg-transparent px-4 py-3 text-center text-sm font-semibold text-[#e98c00] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-colors sm:w-auto sm:max-w-none sm:px-5 sm:text-[17px] lg:border-transparent lg:bg-[#e98c00] lg:text-white lg:shadow-[0px_4px_2px_rgba(0,0,0,0.25)]"
+                    aria-label="ליצירת קשר בוואטסאפ"
+                    className="inline-flex h-12 w-full items-center justify-center gap-1 rounded-lg bg-[#e98c00] px-5 py-3 text-center text-lg font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)]"
                   >
-                    <span>לקחת אותי לשיחה</span>
-                    <span className="text-[10px] leading-none" aria-hidden>
-                      ▶
-                    </span>
-                    <span className="relative inline-block size-5 shrink-0" aria-hidden>
-                      <img
-                        src={figma.waOutline.mobile}
-                        alt=""
-                        width={20}
-                        height={20}
-                        className="size-5 [filter:brightness(0)_saturate(100%)_invert(55%)_sepia(98%)_saturate(1200%)_hue-rotate(1deg)_brightness(98%)] lg:hidden"
-                      />
-                      <img src={figma.waSolid.desktop} alt="" width={20} height={20} className="hidden size-5 lg:block" />
-                    </span>
+                    <span>ליצירת קשר בוואטסאפ</span>
+                    <img src={figma.waHeroButton} alt="" width={24} height={24} className="size-6 shrink-0" aria-hidden />
                   </AnimatedButton>
                 </div>
-           
-              </div>
-              <div className="relative h-[287px] w-[192px] shrink-0 overflow-hidden rounded-[20px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:h-[360px] sm:w-56 lg:order-1 lg:h-[430px] lg:w-[287px]">
-                <ResponsiveFigmaPicture
-                  asset={figma.heroPortrait}
-                  alt="דניאל סער"
-                  width={287}
-                  height={430}
-                  priority
-                  className="h-full w-full [&_img]:h-full [&_img]:w-full [&_img]:object-cover"
-                />
               </div>
             </div>
           </div>

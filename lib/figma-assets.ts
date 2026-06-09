@@ -3,8 +3,9 @@ import { withAssetPrefix } from "@/lib/base-path";
 /** Local paths for exported Figma MCP assets (see scripts/download-figma-assets.mjs). */
 const figmaAssets = {
   logo: { mobile: "/figma/995841c4-13ea-451f-8b9c-1618a05079ed.svg", desktop: "/figma/411f046f-4104-44e8-a194-bc7ce77ade6d.svg" },
-  heroTitle: { mobile: "/figma/6aa5d505-a6db-4cd8-aa4d-7ba3ea0dd2e1.svg", desktop: "/figma/8b316a10-7052-4e16-ad42-9f85ec8301b5.svg" },
-  heroPortrait: { mobile: "/figma/ec5bc50d-9e07-4673-bbd7-2e92d7bf9577.jpg", desktop: "/figma/a3b31bc3-fb5c-4df4-bf1e-1f58c80dbfa6.jpg" },
+  heroTitle: { mobile: "/figma/4a3181c5-9800-4e4f-ab0d-3f1da40b62a5.svg", desktop: "/figma/4a3181c5-9800-4e4f-ab0d-3f1da40b62a5.svg" },
+  heroPortrait: { mobile: "/figma/5cb9959b-563c-4de3-b197-26d6a07ee059.jpg", desktop: "/figma/5cb9959b-563c-4de3-b197-26d6a07ee059.jpg" },
+  waHeroButton: "/figma/7601bf28-be06-4252-880f-28d48fa0e07d.svg",
   cardPersonalTop: { mobile: "/figma/71ff1037-3ee2-4dab-ac3a-b3f022ba4dfb.png", desktop: "/figma/6312a868-1fd6-4b1f-b3b9-dcbdb4cccc21.png" },
   cardBusinessTop: { mobile: "/figma/2fd6fcb7-f90d-4956-8596-a677234303d5.png", desktop: "/figma/b03a2d19-2bfc-44ef-b076-0db74ad7700d.png" },
   beforeAfterAfter: { mobile: "/figma/3707f9f8-f6e6-43a3-b021-c2033971be14.png", desktop: "/figma/60d2178b-3518-4380-989f-49f9d4ea74ec.png" },
