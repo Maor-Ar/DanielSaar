@@ -53,7 +53,7 @@ export function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="ליצירת קשר בוואטסאפ"
-                  className="inline-flex h-12 w-full items-center justify-center gap-1 rounded-lg bg-[#e98c00] px-5 py-3 text-center text-lg font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:max-w-[462px]"
+                  className="inline-flex h-12 w-[85%] self-center items-center justify-center gap-1 rounded-lg bg-[#e98c00] px-5 py-3 text-center text-lg font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:w-full lg:max-w-[462px] lg:self-auto"
                 >
                   <span>ליצירת קשר בוואטסאפ</span>
                   <img src={figma.waHeroButton} alt="" width={24} height={24} className="size-6 shrink-0" aria-hidden />

@@ -40,16 +40,16 @@ export function StoryCardsMobileCarousel({ children }: { children: React.ReactNo
       aria-label="בחירת סוג סיפור"
       tabIndex={0}
     >
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex touch-pan-y">
+      <div className="overflow-hidden px-1 pb-5" ref={emblaRef}>
+        <div className="flex touch-pan-y items-stretch">
           {slides.map((slide, i) => (
-            <div className="min-w-0 shrink-0 grow-0 basis-[88%] px-1 sm:basis-[85%]" key={i}>
-              {slide}
+            <div className="flex min-w-0 shrink-0 grow-0 basis-[88%] px-1 sm:basis-[85%]" key={i}>
+              <div className="flex w-full [&>article]:h-full [&>article]:w-full">{slide}</div>
             </div>
           ))}
         </div>
       </div>
-      <div className="mt-4 flex justify-center gap-2" role="tablist" aria-label="בחירת כרטיס סיפור">
+      <div className="mt-6 flex justify-center gap-2" role="tablist" aria-label="בחירת כרטיס סיפור">
         {slides.map((_, i) => (
           <button
             key={i}

@@ -13,7 +13,7 @@ export function StoryChoiceSection() {
             </h2>
             <p className="text-2xl font-semibold text-[#6f747f] sm:text-3xl lg:text-[40px] lg:tracking-wide">סיפור עסקי או אישי</p>
           </div>
-          <div className="hidden w-full flex-wrap justify-center gap-6 lg:flex">
+          <div className="hidden w-full items-stretch justify-center gap-6 lg:flex">
             <BusinessStoryCard />
             <PersonalStoryCard />
           </div>
