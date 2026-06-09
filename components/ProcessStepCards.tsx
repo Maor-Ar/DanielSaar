@@ -10,7 +10,7 @@ const rowClassName =
   "flex w-full max-w-[312px] flex-col items-start gap-5 self-center sm:max-w-none lg:max-w-none lg:flex-row lg:flex-nowrap lg:items-stretch lg:justify-center lg:gap-[71px]";
 
 const cardClassName =
-  "flex w-full flex-col items-start gap-1.5 rounded-lg bg-white p-4 text-right shadow-[0px_4px_2px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:-translate-y-1 lg:w-[310px] lg:gap-1.5 lg:p-4";
+  "flex h-[237px] w-full flex-col items-start justify-center gap-1.5 rounded-lg bg-white p-4 text-right shadow-[0px_4px_2px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:-translate-y-1 lg:h-auto lg:justify-start lg:w-[310px] lg:gap-1.5 lg:p-4";
 
 export function ProcessStepCards({ steps }: { steps: ProcessStep[] }) {
   return (

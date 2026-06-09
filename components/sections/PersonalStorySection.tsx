@@ -30,7 +30,7 @@ export function PersonalStorySection() {
     <MotionFade>
       <section id="personal-story" aria-labelledby="personal-heading" className="bg-white px-4 pb-24 pt-16 sm:px-8 lg:px-16 xl:px-40 lg:pb-[310px] lg:pt-[100px]">
         <div className="mx-auto flex max-w-[1450px] flex-col items-center gap-20 lg:gap-40">
-          <div className="grid w-full grid-cols-1 items-center gap-12 sm:max-w-[370px] sm:justify-items-center md:max-w-none md:grid-cols-1 md:justify-items-stretch lg:grid-cols-[minmax(0,742px)_minmax(280px,628px)] lg:items-start lg:justify-center lg:gap-x-8 lg:gap-y-12 xl:gap-x-20">
+          <div className="grid w-full grid-cols-1 items-center gap-12 sm:max-w-[370px] sm:justify-items-center lg:max-w-none lg:grid-cols-[minmax(0,742px)_minmax(280px,628px)] lg:items-start lg:justify-center lg:gap-x-8 lg:gap-y-12 xl:gap-x-20">
             <div className="relative order-2 w-full min-w-0 max-w-[742px] justify-self-center lg:justify-self-end">
               <BookCoverCarousel />
             </div>
