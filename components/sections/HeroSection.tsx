@@ -4,8 +4,7 @@ import { ResponsiveFigmaPicture } from "@/components/ResponsiveFigmaPicture";
 import { figma } from "@/lib/figma-assets";
 import { WHATSAPP_MESSAGES, whatsappUrl } from "@/lib/whatsapp";
 
-const waBusiness = whatsappUrl(WHATSAPP_MESSAGES.business);
-const waPersonal = whatsappUrl(WHATSAPP_MESSAGES.personal);
+const waHero = whatsappUrl(WHATSAPP_MESSAGES.hero);
 
 export function HeroSection() {
   return (
@@ -37,33 +36,27 @@ export function HeroSection() {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full max-w-full shrink-0 origin-right flex-row flex-nowrap items-center gap-2.5 max-[440px]:scale-[0.88]">
+                <div className="w-full pl-4 pr-2 sm:pl-0 sm:pr-0">
                   <AnimatedButton
-                    href={waBusiness}
+                    href={waHero}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-lg bg-[#e98c00] px-3 py-3 text-center text-sm font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)] max-[440px]:gap-1.5 max-[440px]:px-2.5 max-[440px]:py-2.5 sm:px-5 sm:text-[17px]"
+                    aria-label="לקחת אותי לשיחה בוואטסאפ"
+                    className="inline-flex w-full max-w-[340px] items-center justify-center gap-2.5 whitespace-nowrap rounded-lg border border-[#e98c00] bg-transparent px-4 py-3 text-center text-sm font-semibold text-[#e98c00] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-colors sm:w-auto sm:max-w-none sm:px-5 sm:text-[17px] lg:border-transparent lg:bg-[#e98c00] lg:text-white lg:shadow-[0px_4px_2px_rgba(0,0,0,0.25)]"
                   >
-                    <span>ספרו לי על העסק שלכם</span>
-                    <span className="relative inline-block size-5 shrink-0" aria-hidden>
-                      <picture>
-                        <source media="(min-width: 1024px)" srcSet={figma.waSolid.desktop} />
-                        <img src={figma.waSolid.mobile} alt="" width={20} height={20} className="size-5" />
-                      </picture>
+                    <span>לקחת אותי לשיחה</span>
+                    <span className="text-[10px] leading-none" aria-hidden>
+                      ▶
                     </span>
-                  </AnimatedButton>
-                  <AnimatedButton
-                    href={waPersonal}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-lg border border-slate-900 px-3 py-3 text-center text-sm font-semibold text-slate-900 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-[440px]:gap-1.5 max-[440px]:px-2.5 max-[440px]:py-2.5 sm:px-5 sm:text-[17px]"
-                  >
-                    <span>ספרו לי את הסיפור שלכם</span>
                     <span className="relative inline-block size-5 shrink-0" aria-hidden>
-                      <picture>
-                        <source media="(min-width: 1024px)" srcSet={figma.waOutline.desktop} />
-                        <img src={figma.waOutline.mobile} alt="" width={20} height={20} className="size-5" />
-                      </picture>
+                      <img
+                        src={figma.waOutline.mobile}
+                        alt=""
+                        width={20}
+                        height={20}
+                        className="size-5 [filter:brightness(0)_saturate(100%)_invert(55%)_sepia(98%)_saturate(1200%)_hue-rotate(1deg)_brightness(98%)] lg:hidden"
+                      />
+                      <img src={figma.waSolid.desktop} alt="" width={20} height={20} className="hidden size-5 lg:block" />
                     </span>
                   </AnimatedButton>
                 </div>
