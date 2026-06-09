@@ -9,7 +9,7 @@ const variantClass: Record<Variant, string> = {
   default:
     "border-white bg-white/95 text-slate-900 shadow-[0_4px_18px_rgba(15,23,42,0.16)] backdrop-blur-sm hover:border-[#e98c00]/40 hover:bg-white hover:text-[#e98c00] hover:shadow-[0_8px_24px_rgba(233,140,0,0.22)]",
   overlay:
-    "border-white bg-white/98 text-slate-900 shadow-[0_4px_20px_rgba(0,0,0,0.28)] backdrop-blur-md hover:border-white hover:bg-white hover:text-[#e98c00] hover:shadow-[0_6px_24px_rgba(0,0,0,0.32)]",
+    "border-2 border-white bg-white/25 text-white shadow-[0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-[2px] hover:border-white hover:bg-white/40 hover:text-white [&_svg]:drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]",
 };
 
 const btnBase =
