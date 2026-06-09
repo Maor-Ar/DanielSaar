@@ -28,7 +28,7 @@ export function HeroSection() {
 
               {/* Text + CTA — right-aligned; 60px gap to button on mobile, 40px on desktop */}
               <div className="flex w-full flex-col items-end gap-[60px] lg:max-w-[471px] lg:gap-10">
-                <div className="flex w-full flex-col items-end gap-5">
+                <div className="flex w-full flex-col items-center gap-5">
                   <div className="relative h-[64px] w-[234px] shrink-0">
                     <ResponsiveFigmaPicture
                       asset={figma.heroTitle}
@@ -38,7 +38,7 @@ export function HeroSection() {
                       className="[&_img]:object-contain"
                     />
                   </div>
-                  <div className="flex w-full flex-col items-end gap-2.5 text-right">
+                  <div className="flex w-full flex-col items-center gap-2.5 text-center">
                     <h1 id="hero-heading" className="w-full text-[34px] font-semibold text-slate-900">
                       סטוריטלינג עסקי ואישי
                     </h1>

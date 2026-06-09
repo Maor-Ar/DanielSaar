@@ -34,7 +34,7 @@ export function FaqSection() {
         <h2 id="faq-heading" className="mb-10 text-center text-4xl font-bold text-slate-900">
           שאלות תשובות
         </h2>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
           {faqs.map((item, i) => {
             const panelId = `${baseId}-panel-${i}`;
             const buttonId = `${baseId}-btn-${i}`;
