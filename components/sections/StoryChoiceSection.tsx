@@ -14,8 +14,12 @@ export function StoryChoiceSection() {
             <p className="text-2xl font-semibold text-[#6f747f] sm:text-3xl lg:text-[40px] lg:tracking-wide">סיפור עסקי או אישי</p>
           </div>
           <div className="hidden w-full items-stretch justify-center gap-6 lg:flex">
-            <BusinessStoryCard />
-            <PersonalStoryCard />
+            <div className="flex min-w-0 flex-1 basis-0 max-w-[551px] [&>article]:h-full [&>article]:w-full [&>article]:max-w-none">
+              <BusinessStoryCard />
+            </div>
+            <div className="flex min-w-0 flex-1 basis-0 max-w-[551px] [&>article]:h-full [&>article]:w-full [&>article]:max-w-none">
+              <PersonalStoryCard />
+            </div>
           </div>
           <div className="w-full max-w-[360px] lg:hidden">
             <StoryCardsMobileCarousel>

@@ -17,13 +17,13 @@ const slides = [
 function SlideImage({ src, alt, priority }: { src: string | { mobile: string; desktop: string }; alt: string; priority?: boolean }) {
   if (typeof src === "string") {
     return (
-      <Image src={src} alt={alt} fill className="object-cover object-center" sizes="(max-width: 1023px) 85vw, 520px" priority={priority} />
+      <Image src={src} alt={alt} fill className="object-cover object-center" sizes="(max-width: 1023px) 85vw, 628px" priority={priority} />
     );
   }
   return (
     <>
       <Image src={src.mobile} alt={alt} fill className="object-cover object-center lg:hidden" sizes="85vw" priority={priority} />
-      <Image src={src.desktop} alt={alt} fill className="hidden object-cover object-center lg:block" sizes="520px" priority={priority} />
+      <Image src={src.desktop} alt={alt} fill className="hidden object-cover object-center lg:block" sizes="628px" priority={priority} />
     </>
   );
 }
@@ -52,13 +52,13 @@ export function BookCoverCarousel() {
 
   return (
     <div
-      className="relative w-full max-w-[744px]"
+      className="relative w-full"
       role="region"
       aria-roledescription="carousel"
       aria-label="דוגמאות לספרים"
       tabIndex={0}
     >
-      <div className="relative h-[277px] overflow-hidden rounded-[20px] lg:h-[595px]">
+      <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden rounded-[20px] sm:min-h-[260px] lg:aspect-[742/552] lg:min-h-0">
         <EmblaCarouselArrows emblaApi={emblaApi} variant="overlay" />
         <div className="relative h-full w-full" ref={emblaRef}>
           <div className="flex h-full">

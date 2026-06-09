@@ -30,22 +30,24 @@ export function PersonalStorySection() {
     <MotionFade>
       <section id="personal-story" aria-labelledby="personal-heading" className="bg-white px-4 pb-24 pt-16 sm:px-8 lg:px-16 xl:px-40 lg:pb-[310px] lg:pt-[100px]">
         <div className="mx-auto flex max-w-[1450px] flex-col items-center gap-20 lg:gap-40">
-          <div className="grid w-full grid-cols-1 items-center gap-20 sm:max-w-[370px] sm:justify-items-center md:max-w-none md:grid-cols-1 md:justify-items-stretch lg:grid-cols-[minmax(0,626px)_minmax(0,744px)] lg:items-center lg:justify-center lg:gap-x-20 lg:gap-y-12">
-            <div className="order-1 mx-auto flex w-full max-w-[300px] flex-col items-start gap-12 text-right sm:max-w-[370px] lg:order-1 lg:mx-0 lg:max-w-[626px] lg:justify-self-end">
-              <div className="flex w-full flex-col items-start gap-8">
-                <div className="flex w-full flex-col items-start gap-5 lg:w-[244px]">
-                  <span className="rounded-full border border-[#262c3a] px-4 py-1.5 text-[15px] font-semibold text-slate-900">
-                    אישי
-                  </span>
-                  <h2 id="personal-heading" className="whitespace-pre-wrap text-[42px] font-bold leading-tight text-slate-900">
-                    <span>כתיבת{"\n"}</span>
-                    <span>סיפור אישי</span>
-                  </h2>
-                </div>
-                <p className="w-full text-[22px] font-semibold leading-normal text-[#6f747f]">
-                  אני מגבשת את הזיכרונות שלכם לספר מרגש שמתעד את המורשת המשפחתית מתוך אמונה שלכל אדם יש סיפור ששווה לספר
-                </p>
+          <div className="grid w-full grid-cols-1 items-center gap-12 sm:max-w-[370px] sm:justify-items-center md:max-w-none md:grid-cols-1 md:justify-items-stretch lg:grid-cols-[minmax(0,742px)_minmax(280px,628px)] lg:items-start lg:justify-center lg:gap-x-8 lg:gap-y-12 xl:gap-x-20">
+            <div className="relative order-2 w-full min-w-0 max-w-[742px] justify-self-center lg:justify-self-end">
+              <BookCoverCarousel />
+            </div>
+
+            <div className="order-1 flex w-full max-w-[300px] flex-col items-start gap-8 justify-self-center text-right sm:max-w-[370px] lg:max-w-[628px] lg:justify-self-start lg:gap-12">
+              <div className="flex w-full flex-col items-start gap-5">
+                <span className="rounded-full border border-[#262c3a] px-4 py-1.5 text-[15px] font-semibold text-slate-900">
+                  אישי
+                </span>
+                <h2 id="personal-heading" className="whitespace-pre-wrap text-3xl font-bold leading-tight text-slate-900 lg:text-[42px]">
+                  <span>כתיבת{"\n"}</span>
+                  <span>סיפור אישי</span>
+                </h2>
               </div>
+              <p className="w-full text-lg font-semibold leading-normal text-[#6f747f] lg:text-[22px]">
+                אני מגבשת את הזיכרונות שלכם לספר מרגש שמתעד את המורשת המשפחתית מתוך אמונה שלכל אדם יש סיפור ששווה לספר
+              </p>
 
               <div className="relative h-px w-full max-w-[157px] lg:max-w-[464px]">
                 <img src={figma.bookCarouselDivider} alt="" className="h-full w-full object-contain" aria-hidden />
@@ -64,7 +66,7 @@ export function PersonalStorySection() {
                 href={waPersonal}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex shrink-0 items-center gap-2.5 self-start rounded-lg bg-[#e98c00] px-5 py-3 text-[17px] font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)]"
+                className="inline-flex shrink-0 items-center gap-2.5 self-start rounded-lg bg-[#e98c00] px-5 py-3 text-lg font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)]"
               >
                 ספרו לי את הסיפור שלכם
                 <span className="inline-block size-5 shrink-0" aria-hidden>
@@ -74,10 +76,6 @@ export function PersonalStorySection() {
                   </picture>
                 </span>
               </AnimatedButton>
-            </div>
-
-            <div className="order-2 w-full min-w-0 max-w-[744px] justify-self-center px-0 lg:order-2 lg:justify-self-start">
-              <BookCoverCarousel />
             </div>
           </div>
 
