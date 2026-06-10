@@ -16,7 +16,7 @@ export function PersonalStoryCard() {
       <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-t-[20px] sm:h-[220px] lg:h-[255px]">
         <picture>
           <source media="(min-width: 1024px)" srcSet={figma.cardPersonalTop.desktop} />
-          <img src={figma.cardPersonalTop.mobile} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={figma.cardPersonalTop.mobile} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
         </picture>
         <div className="absolute bottom-4 right-4 rounded border border-slate-900 bg-white px-2.5 py-0.5">
           <span className="text-sm font-bold text-slate-900">אישי</span>
@@ -67,7 +67,7 @@ export function BusinessStoryCard() {
       <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-t-[20px] sm:h-[220px] lg:h-[255px]">
         <picture>
           <source media="(min-width: 1024px)" srcSet={figma.cardBusinessTop.desktop} />
-          <img src={figma.cardBusinessTop.mobile} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={figma.cardBusinessTop.mobile} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async" />
         </picture>
         <div className="absolute bottom-4 right-4 rounded border border-white bg-[#e98c00] px-2.5 py-0.5">
           <span className="text-sm font-bold text-white">עסקי</span>

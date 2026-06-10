@@ -49,9 +49,9 @@ function BeforeAfterImage({
 
     <>
 
-      <img src={asset.mobile} alt={alt} className={`${className} lg:hidden`} />
+      <img src={asset.mobile} alt={alt} className={`${className} lg:hidden`} loading="lazy" decoding="async" />
 
-      <img src={asset.desktop} alt={alt} className={`${className} hidden lg:block`} />
+      <img src={asset.desktop} alt={alt} className={`${className} hidden lg:block`} loading="lazy" decoding="async" />
 
     </>
 
@@ -197,7 +197,7 @@ export function BusinessContentSection() {
 
                   <source media="(min-width: 1024px)" srcSet={figma.checklistBusiness.desktop} />
 
-                  <img src={figma.checklistBusiness.mobile} alt="" className="h-full w-full object-contain" />
+                  <img src={figma.checklistBusiness.mobile} alt="" className="h-full w-full object-contain" loading="lazy" decoding="async" />
 
                 </picture>
 
