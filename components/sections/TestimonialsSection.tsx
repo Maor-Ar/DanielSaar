@@ -4,6 +4,7 @@ import AutoHeight from "embla-carousel-auto-height";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { figma } from "@/lib/figma-assets";
+import { siteOperator } from "@/lib/legal/site-operator";
 import { useEmblaAutoplayPlugin, useEmblaAutoplaySync } from "@/lib/use-embla-autoplay";
 import { useEmblaKeyboard } from "@/lib/use-embla-keyboard";
 
@@ -120,7 +121,7 @@ export function TestimonialsSection({ items }: { items: Testimonial[] }) {
           ))}
         </div>
         <a
-          href="https://www.google.com/maps"
+          href={siteOperator.googleReviewsUrl}
           className="inline-flex items-center justify-center gap-2 text-xl font-semibold text-[#e98c00] transition-opacity hover:opacity-80"
           target="_blank"
           rel="noopener noreferrer"

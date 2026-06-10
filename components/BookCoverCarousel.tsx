@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { figma } from "@/lib/figma-assets";
 import { EmblaCarouselArrows } from "@/components/EmblaCarouselArrows";
-import { useEmblaAutoplayPlugin, useEmblaAutoplaySync } from "@/lib/use-embla-autoplay";
 import { useEmblaKeyboard } from "@/lib/use-embla-keyboard";
 
 const slides = [
@@ -29,9 +28,7 @@ function SlideImage({ src, alt, priority }: { src: string | { mobile: string; de
 }
 
 export function BookCoverCarousel() {
-  const autoplay = useEmblaAutoplayPlugin({ delay: 5000 });
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", direction: "rtl" }, [autoplay]);
-  useEmblaAutoplaySync(emblaApi);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", direction: "rtl" });
   const [selected, setSelected] = useState(0);
 
   const onSelect = useCallback(() => {
