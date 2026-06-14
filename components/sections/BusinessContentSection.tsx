@@ -37,9 +37,9 @@ export function BusinessContentSection() {
 
         <div className="mx-auto flex max-w-[1450px] flex-col items-center gap-20 lg:gap-40">
 
-          <div className="grid w-full grid-cols-1 items-center gap-12 sm:max-w-[370px] sm:justify-items-center lg:max-w-none lg:grid-cols-[minmax(280px,628px)_minmax(0,742px)] lg:items-start lg:justify-center lg:gap-x-8 lg:gap-y-12 xl:gap-x-20">
+          <div className="grid w-full grid-cols-1 items-center gap-12 sm:max-w-[370px] sm:justify-items-center lg:max-w-none lg:grid-cols-[minmax(0,742px)_minmax(280px,628px)] lg:items-start lg:justify-center lg:gap-x-8 lg:gap-y-12 xl:gap-x-20">
 
-            <div className="relative order-2 w-full min-w-0 max-w-[742px] justify-self-center lg:order-1 lg:justify-self-start">
+            <div className="relative order-2 w-full min-w-0 max-w-[742px] justify-self-center lg:justify-self-end">
               <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden sm:min-h-[260px] lg:aspect-[742/552] lg:min-h-0">
                 <img
                   src={figma.beforeAfterComposite}
@@ -53,7 +53,7 @@ export function BusinessContentSection() {
 
 
 
-            <div className="order-1 flex w-full max-w-[300px] flex-col items-start gap-8 justify-self-center text-right sm:max-w-[370px] lg:order-2 lg:max-w-[628px] lg:justify-self-end lg:gap-12">
+            <div className="order-1 flex w-full max-w-[300px] flex-col items-start gap-8 justify-self-center text-right sm:max-w-[370px] lg:max-w-[628px] lg:justify-self-start lg:gap-12">
 
               <div className="flex w-full flex-col items-start gap-5">
 
