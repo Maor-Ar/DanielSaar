@@ -25,10 +25,10 @@ export function AboutSection() {
                 <p className="text-4xl font-bold text-[#e98c00] min-[1014px]:text-[50px]">7</p>
                 <p className="text-sm text-slate-900/60">שנות ניסיון</p>
               </div>
-              <div className="order-2 flex items-center justify-center min-[1014px]:order-1 min-[1014px]:w-full min-[1014px]:max-w-md min-[1014px]:flex-1 min-[1014px]:flex-row-reverse min-[1014px]:gap-2">
+              <div dir="ltr" className="order-2 flex items-center justify-center min-[1014px]:order-1 min-[1014px]:w-full min-[1014px]:max-w-md min-[1014px]:flex-1 min-[1014px]:gap-2">
                 <img src={figma.laurelLeft.mobile} alt="" className="h-[86px] w-[49px] shrink-0 object-contain min-[1014px]:hidden" />
                 <img src={figma.laurelLeft.desktop} alt="" className="hidden h-[86px] w-[49px] shrink-0 object-contain min-[1014px]:block" />
-                <div className="flex w-[182px] shrink-0 flex-col items-center text-center text-slate-900 min-[1014px]:w-auto min-[1014px]:gap-1 min-[1014px]:text-base">
+                <div dir="rtl" className="flex w-[182px] shrink-0 flex-col items-center text-center text-slate-900 min-[1014px]:w-auto min-[1014px]:gap-1 min-[1014px]:text-base">
                   <p className="flex h-[27px] items-center justify-center text-base font-semibold leading-normal tracking-[0.16px] min-[1014px]:h-auto">
                     כתיבה מבוססת הצלחה
                   </p>
