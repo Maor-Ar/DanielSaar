@@ -12,7 +12,7 @@ function IconPair({ mobile, desktop }: { mobile: string; desktop: string }) {
 
 export function PersonalStoryCard() {
   return (
-    <article className="group flex h-full w-full max-w-[543px] flex-col overflow-hidden rounded-[20px] border border-slate-900/20 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-shadow duration-300 hover:shadow-[0px_12px_28px_rgba(15,23,42,0.12)]">
+    <article className="group relative flex h-full w-full max-w-[543px] flex-col overflow-hidden rounded-[20px] border border-slate-900/20 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-shadow duration-300 hover:shadow-[0px_12px_28px_rgba(15,23,42,0.12)]">
       <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-t-[20px] sm:h-[220px] lg:h-[255px]">
         <picture>
           <source media="(min-width: 1024px)" srcSet={figma.cardPersonalTop.desktop} />
@@ -22,10 +22,10 @@ export function PersonalStoryCard() {
           <span className="text-sm font-bold text-slate-900">אישי</span>
         </div>
       </div>
+      <p className="shrink-0 text-center text-[8px] text-transparent select-none lg:hidden" aria-hidden>
+        הלוגואים מוצגים להמחשת ניסיון בפרויקטים, כל הזכויות שמורות לבעליהם ללא קשר שותפות
+      </p>
       <div className="flex flex-1 flex-col gap-6 bg-white px-4 py-6 text-right sm:px-6 lg:px-6 lg:pb-8 lg:pt-8">
-        <p className="shrink-0 text-center text-[8px] text-transparent select-none lg:hidden" aria-hidden>
-          הלוגואים מוצגים להמחשת ניסיון בפרויקטים, כל הזכויות שמורות לבעליהם ללא קשר שותפות
-        </p>
         <div className="flex w-full flex-1 flex-col items-start gap-6">
           <div className="w-full text-right">
             <h3 className="text-2xl font-bold text-slate-900 lg:text-[34px]">סיפור אישי</h3>
@@ -63,7 +63,7 @@ export function PersonalStoryCard() {
 
 export function BusinessStoryCard() {
   return (
-    <article className="group flex h-full w-full max-w-[551px] flex-col overflow-hidden rounded-[20px] border border-slate-900/20 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-shadow duration-300 hover:shadow-[0px_12px_28px_rgba(15,23,42,0.12)]">
+    <article className="group relative flex h-full w-full max-w-[551px] flex-col overflow-hidden rounded-[20px] border border-slate-900/20 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] transition-shadow duration-300 hover:shadow-[0px_12px_28px_rgba(15,23,42,0.12)]">
       <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-t-[20px] sm:h-[220px] lg:h-[255px]">
         <picture>
           <source media="(min-width: 1024px)" srcSet={figma.cardBusinessTop.desktop} />
@@ -73,10 +73,10 @@ export function BusinessStoryCard() {
           <span className="text-sm font-bold text-white">עסקי</span>
         </div>
       </div>
-      <div className="relative flex flex-1 flex-col gap-6 bg-white px-4 py-6 text-right sm:px-6 lg:px-6 lg:pb-8 lg:pt-8">
-        <p className="shrink-0 text-center text-[8px] text-slate-900/60 lg:absolute lg:left-6 lg:top-3 lg:text-left lg:text-[10px] lg:font-bold lg:whitespace-nowrap">
-          הלוגואים מוצגים להמחשת ניסיון בפרויקטים, כל הזכויות שמורות לבעליהם ללא קשר שותפות
-        </p>
+      <p className="shrink-0 text-center text-[8px] text-slate-900/60 lg:absolute lg:left-6 lg:top-[267px] lg:text-left lg:text-[10px] lg:font-bold lg:whitespace-nowrap">
+        הלוגואים מוצגים להמחשת ניסיון בפרויקטים, כל הזכויות שמורות לבעליהם ללא קשר שותפות
+      </p>
+      <div className="flex flex-1 flex-col gap-6 bg-white px-4 py-6 text-right sm:px-6 lg:px-6 lg:pb-8 lg:pt-8">
         <div className="flex w-full flex-1 flex-col items-start gap-6 lg:mt-6">
           <div className="w-full text-right">
             <h3 className="text-2xl font-bold text-slate-900 lg:text-[34px]">סיפור עסקי</h3>
