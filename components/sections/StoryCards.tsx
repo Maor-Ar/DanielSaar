@@ -23,7 +23,7 @@ export function PersonalStoryCard() {
         </div>
       </div>
       <div className="flex flex-1 flex-col gap-6 bg-white px-4 py-6 text-right sm:px-6 lg:px-6 lg:pb-8 lg:pt-8">
-        <p className="shrink-0 text-center text-[10px] text-transparent select-none lg:hidden" aria-hidden>
+        <p className="shrink-0 text-center text-[8px] text-transparent select-none lg:hidden" aria-hidden>
           הלוגואים מוצגים להמחשת ניסיון בפרויקטים, כל הזכויות שמורות לבעליהם ללא קשר שותפות
         </p>
         <div className="flex w-full flex-1 flex-col items-start gap-6">
@@ -74,7 +74,7 @@ export function BusinessStoryCard() {
         </div>
       </div>
       <div className="relative flex flex-1 flex-col gap-6 bg-white px-4 py-6 text-right sm:px-6 lg:px-6 lg:pb-8 lg:pt-8">
-        <p className="shrink-0 text-center text-[10px] text-slate-900/60 lg:absolute lg:left-6 lg:top-3 lg:text-left lg:font-bold lg:whitespace-nowrap">
+        <p className="shrink-0 text-center text-[8px] text-slate-900/60 lg:absolute lg:left-6 lg:top-3 lg:text-left lg:text-[10px] lg:font-bold lg:whitespace-nowrap">
           הלוגואים מוצגים להמחשת ניסיון בפרויקטים, כל הזכויות שמורות לבעליהם ללא קשר שותפות
         </p>
         <div className="flex w-full flex-1 flex-col items-start gap-6 lg:mt-6">
