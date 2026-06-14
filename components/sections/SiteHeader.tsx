@@ -4,20 +4,33 @@ import { useEffect, useState } from "react";
 import { figma } from "@/lib/figma-assets";
 import { ResponsiveFigmaPicture } from "@/components/ResponsiveFigmaPicture";
 
-/** Pixels scrolled before the header fades in. */
+/** Pixels from top/bottom edge before the header fades out. */
 const SCROLL_THRESHOLD = 64;
+
+function isHeaderVisible() {
+  const { scrollY, innerHeight } = window;
+  const maxScroll = document.documentElement.scrollHeight - innerHeight;
+  const scrolledPastTop = scrollY > SCROLL_THRESHOLD;
+  const nearBottom = scrollY >= maxScroll - SCROLL_THRESHOLD;
+
+  return scrolledPastTop && !nearBottom;
+}
 
 export function SiteHeader() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      setVisible(window.scrollY > SCROLL_THRESHOLD);
+    const updateVisibility = () => {
+      setVisible(isHeaderVisible());
     };
 
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    window.addEventListener("resize", updateVisibility);
+    return () => {
+      window.removeEventListener("scroll", updateVisibility);
+      window.removeEventListener("resize", updateVisibility);
+    };
   }, []);
 
   return (
