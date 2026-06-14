@@ -48,9 +48,9 @@ export function PersonalStoryCard() {
         </div>
         <AnimatedButton
           href="#personal-story"
-          className="mx-auto mt-auto inline-flex items-center gap-5 rounded-xl border border-slate-900 bg-white px-10 py-3.5 text-[15px] font-semibold text-slate-900 shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:px-40"
+          className="mx-auto mt-auto inline-flex items-center justify-center gap-5 rounded-xl border border-slate-900 bg-white px-10 py-3.5 text-[15px] font-semibold text-slate-900 shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:w-full lg:px-40"
         >
-          <span>לקרוא על זה עוד</span>
+          <span className="whitespace-nowrap">לקרוא על זה עוד</span>
           <span className="inline-flex shrink-0 rotate-180" aria-hidden>
             <img src={figma.arrowLeft.mobile} alt="" width={10} height={10} className="lg:hidden" />
             <img src={figma.arrowLeft.desktop} alt="" width={10} height={10} className="hidden lg:inline" />
@@ -99,9 +99,9 @@ export function BusinessStoryCard() {
         </div>
         <AnimatedButton
           href="#business-content"
-          className="mx-auto mt-auto inline-flex items-center gap-5 rounded-xl bg-[#e98c00] px-10 py-3.5 text-[15px] font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:px-40"
+          className="mx-auto mt-auto inline-flex items-center justify-center gap-5 rounded-xl bg-[#e98c00] px-10 py-3.5 text-[15px] font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)] lg:w-full lg:px-40"
         >
-          <span>לקרוא על זה עוד</span>
+          <span className="whitespace-nowrap">לקרוא על זה עוד</span>
           <span className="inline-flex shrink-0 rotate-180" aria-hidden>
             <img src={figma.arrowLeftOrange.mobile} alt="" width={10} height={10} className="lg:hidden" />
             <img src={figma.arrowLeftOrange.desktop} alt="" width={10} height={10} className="hidden lg:inline" />
