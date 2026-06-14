@@ -27,40 +27,6 @@ const steps = [
 
 
 
-function BeforeAfterImage({
-
-  asset,
-
-  alt,
-
-  className,
-
-}: {
-
-  asset: { mobile: string; desktop: string };
-
-  alt: string;
-
-  className: string;
-
-}) {
-
-  return (
-
-    <>
-
-      <img src={asset.mobile} alt={alt} className={`${className} lg:hidden`} loading="lazy" decoding="async" />
-
-      <img src={asset.desktop} alt={alt} className={`${className} hidden lg:block`} loading="lazy" decoding="async" />
-
-    </>
-
-  );
-
-}
-
-
-
 export function BusinessContentSection() {
 
   return (
@@ -74,99 +40,15 @@ export function BusinessContentSection() {
           <div className="grid w-full grid-cols-1 items-center gap-12 sm:max-w-[370px] sm:justify-items-center lg:max-w-none lg:grid-cols-[minmax(280px,628px)_minmax(0,742px)] lg:items-start lg:justify-center lg:gap-x-8 lg:gap-y-12 xl:gap-x-20">
 
             <div className="relative order-2 w-full min-w-0 max-w-[742px] justify-self-center lg:order-1 lg:justify-self-start">
-
-              <div
-
-                className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden rounded border border-slate-900/20 bg-white sm:min-h-[260px] lg:aspect-[742/552] lg:min-h-0"
-
-                dir="ltr"
-
-              >
-
-                <div className="absolute inset-x-0 top-0 z-0 h-[35%] rounded-t bg-[rgba(217,217,217,0.4)]" aria-hidden />
-
-
-
-                {/* אחרי — polished card (top-right) */}
-
-                <div className="absolute left-[37.5%] top-[3.5%] z-10 h-[57%] w-[59.5%] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)] lg:left-[38%] lg:top-[1.5%] lg:h-[59%] lg:w-[60%]">
-
-                  <BeforeAfterImage
-
-                    asset={figma.beforeAfterAfter}
-
-                    alt="אחרי — תוכן ממוקד"
-
-                    className="h-full w-full object-cover object-top"
-
-                  />
-
-                </div>
-
-
-
-                {/* לפני — page screenshot (bottom-left), cropped like Figma */}
-
-                <div className="absolute bottom-[3%] left-[1.5%] z-20 h-[46.5%] w-[71%] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)] lg:bottom-[4%] lg:left-[2%] lg:h-[48%] lg:w-[71%]">
-
-                  <div className="relative h-full w-full overflow-hidden">
-
-                    <BeforeAfterImage
-
-                      asset={figma.beforeAfterScreenshot}
-
-                      alt="לפני — דוגמה לכתיבת תוכן"
-
-                      className="absolute left-[-17%] top-[-0.1%] h-[134%] w-[117%] max-w-none object-cover"
-
-                    />
-
-                  </div>
-
-                </div>
-
-
-
-                <div className="absolute left-[14%] top-[10%] z-30 flex flex-col items-end gap-1 text-right lg:left-[18%] lg:top-[10%]">
-
-                  <div className="flex items-center gap-2 text-[22px] text-slate-900 lg:text-[42px]">
-
-                    <span>לפני</span>
-
-                    <span className="inline-flex h-[22px] w-px items-center lg:h-[43px]">
-
-                      <img src={figma.lineVertical.desktop} alt="" className="h-full w-full object-contain" />
-
-                    </span>
-
-                  </div>
-
-                  <p className="text-[6px] leading-tight text-slate-900 sm:text-[8px] lg:text-xs">עומס מלל וחוסר מיקוד במסר</p>
-
-                </div>
-
-
-
-                <div className="absolute bottom-[16%] left-[72%] z-30 flex flex-col items-start gap-1 text-right lg:bottom-[20%] lg:left-[76%]">
-
-                  <div className="flex items-center gap-2 text-[22px] text-slate-900 lg:text-[42px]">
-
-                    <span className="inline-flex h-[22px] w-px items-center lg:h-[43px]">
-
-                      <img src={figma.lineVertical.desktop} alt="" className="h-full w-full object-contain" />
-
-                    </span>
-
-                    <span>אחרי</span>
-
-                  </div>
-
-                  <p className="text-[6px] leading-tight text-slate-900 sm:text-[8px] lg:text-xs">תוכן נקי, קריא וממוקד</p>
-
-                </div>
-
+              <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden sm:min-h-[260px] lg:aspect-[742/552] lg:min-h-0">
+                <img
+                  src={figma.beforeAfterComposite}
+                  alt="לפני ואחרי — עומס מלל וחוסר מיקוד במסר לעומת תוכן נקי, קריא וממוקד"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-
             </div>
 
 
