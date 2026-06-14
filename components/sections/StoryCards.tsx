@@ -77,7 +77,7 @@ export function BusinessStoryCard() {
         הלוגואים מוצגים להמחשת ניסיון בפרויקטים, כל הזכויות שמורות לבעליהם ללא קשר שותפות
       </p>
       <div className="flex flex-1 flex-col gap-6 bg-white px-4 py-6 text-right sm:px-6 lg:px-6 lg:pb-8 lg:pt-8">
-        <div className="flex w-full flex-1 flex-col items-start gap-6 lg:mt-6">
+        <div className="flex w-full flex-1 flex-col items-start gap-6">
           <div className="w-full text-right">
             <h3 className="text-2xl font-bold text-slate-900 lg:text-[34px]">סיפור עסקי</h3>
             <p className="mt-2 text-lg font-semibold text-slate-900/60 lg:text-2xl">בניית אסטרטגיית תוכן לעסקים</p>
