@@ -1,6 +1,5 @@
 "use client";
 
-import AutoHeight from "embla-carousel-auto-height";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { figma } from "@/lib/figma-assets";
@@ -18,7 +17,7 @@ export type Testimonial = {
 
 function QuoteCard({ t }: { t: Testimonial }) {
   return (
-    <article className="flex min-h-[220px] w-full max-w-[310px] flex-col items-end gap-4 rounded-lg border border-[#e98c00] bg-white p-4 shadow-[0px_4px_2px_rgba(0,0,0,0.25)] transition-shadow duration-300 hover:shadow-[0px_12px_28px_rgba(233,140,0,0.2)]">
+    <article className="flex h-full min-h-[220px] w-full max-w-[310px] flex-col items-end gap-4 rounded-lg border border-[#e98c00] bg-white p-4 shadow-[0px_4px_2px_rgba(0,0,0,0.25)] transition-shadow duration-300 hover:shadow-[0px_12px_28px_rgba(233,140,0,0.2)]">
       <div className="size-[45px] shrink-0">
         <picture>
           <source media="(min-width: 1024px)" srcSet={figma.quote.desktop} />
@@ -44,10 +43,9 @@ function QuoteCard({ t }: { t: Testimonial }) {
 /** Mobile-only carousel — centered card with peek of neighbors, loop + dots. */
 function MobileTestimonialsCarousel({ items }: { items: Testimonial[] }) {
   const autoplay = useEmblaAutoplayPlugin({ delay: 4500 });
-  const autoHeight = AutoHeight();
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { align: "center", loop: true, direction: "rtl", containScroll: "trimSnaps" },
-    [autoplay, autoHeight],
+    [autoplay],
   );
   useEmblaAutoplaySync(emblaApi);
   const [selected, setSelected] = useState(0);
@@ -74,16 +72,16 @@ function MobileTestimonialsCarousel({ items }: { items: Testimonial[] }) {
       aria-label="חוות דעת"
       tabIndex={0}
     >
-      <div className="overflow-hidden px-1" ref={emblaRef}>
-        <div className="flex touch-pan-y">
+      <div className="overflow-hidden px-1 py-2" ref={emblaRef}>
+        <div className="flex touch-pan-y items-stretch">
           {items.map((t, i) => (
             <div
-              className={`min-w-0 shrink-0 grow-0 basis-[88%] px-1 transition-opacity duration-300 sm:basis-[86%] ${
+              className={`flex min-w-0 shrink-0 grow-0 basis-[88%] px-1 transition-opacity duration-300 sm:basis-[86%] ${
                 selected === i ? "opacity-100" : "opacity-50"
               }`}
               key={t.id}
             >
-              <div className="flex justify-center">
+              <div className="flex h-full w-full justify-center py-1">
                 <QuoteCard t={t} />
               </div>
             </div>
@@ -115,9 +113,11 @@ export function TestimonialsSection({ items }: { items: Testimonial[] }) {
           חוות דעת
         </h2>
         <MobileTestimonialsCarousel items={items} />
-        <div className="hidden flex-wrap justify-center gap-8 lg:flex lg:justify-center lg:gap-10">
+        <div className="hidden flex-wrap items-stretch justify-center gap-8 lg:flex lg:gap-10">
           {items.map((t) => (
-            <QuoteCard key={t.id} t={t} />
+            <div key={t.id} className="flex w-full max-w-[310px]">
+              <QuoteCard t={t} />
+            </div>
           ))}
         </div>
         <a

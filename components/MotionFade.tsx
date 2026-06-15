@@ -20,7 +20,8 @@ export function MotionFade({
   return (
     <motion.div
       className={className}
-      initial="hidden"
+      // Visible in HTML without JS; whileInView still fades in on capable browsers.
+      initial={false}
       animate={eager ? "show" : undefined}
       whileInView={eager ? undefined : "show"}
       viewport={eager ? undefined : { once: true, margin: "-48px" }}
