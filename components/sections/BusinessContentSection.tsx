@@ -44,7 +44,7 @@ export function BusinessContentSection() {
                 <img
                   src={figma.beforeAfterComposite}
                   alt="לפני ואחרי — עומס מלל וחוסר מיקוד במסר לעומת תוכן נקי, קריא וממוקד"
-                  className="h-full w-full object-cover"
+                  className="w-full object-cover"
                   loading="lazy"
                   decoding="async"
                 />
@@ -59,10 +59,10 @@ export function BusinessContentSection() {
 
                 <span className="rounded-full border border-slate-900/90 px-4 py-1.5 text-[15px] font-semibold text-slate-900">לעסקים</span>
 
-                <h2 id="business-heading" className="text-3xl font-bold text-slate-900 lg:text-[42px]">
-
-                  כתיבת תוכן לעסקים
-
+                <h2 id="business-heading" className="whitespace-pre-wrap text-3xl font-bold leading-tight text-slate-900 lg:text-[42px]">
+                  <span>כתיבת תוכן</span>
+                  {"\n"}
+                  <span>לעסקים</span>
                 </h2>
 
               </div>
