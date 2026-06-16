@@ -19,6 +19,7 @@ export default {
         sans: ["var(--font-assistant)", "Assistant", "system-ui", "sans-serif"],
       },
       screens: {
+        about: "1135px",
         lg: "1024px",
         xl: "1280px",
         "2xl": "1920px",
