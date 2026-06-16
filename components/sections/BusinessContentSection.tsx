@@ -73,7 +73,7 @@ export function BusinessContentSection() {
 
               </p>
 
-              <div className="relative h-5 w-full max-w-[339px]">
+              <div className="relative h-5 w-full max-w-[157px] lg:max-w-[339px]">
 
                 <picture>
 
