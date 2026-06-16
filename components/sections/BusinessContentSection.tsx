@@ -40,11 +40,11 @@ export function BusinessContentSection() {
           <div className="grid w-full grid-cols-1 items-center gap-12 sm:max-w-[370px] sm:justify-items-center lg:max-w-none lg:grid-cols-[minmax(0,742px)_minmax(280px,628px)] lg:items-start lg:justify-center lg:gap-x-8 lg:gap-y-12 xl:gap-x-20">
 
             <div className="relative order-2 w-full min-w-0 max-w-[742px] justify-self-center lg:justify-self-end">
-              <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden sm:min-h-[260px] lg:aspect-[742/552] lg:min-h-0">
+              <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden rounded-[30px] sm:min-h-[260px] lg:aspect-[742/552] lg:min-h-0">
                 <img
                   src={figma.beforeAfterComposite}
                   alt="לפני ואחרי — עומס מלל וחוסר מיקוד במסר לעומת תוכן נקי, קריא וממוקד"
-                  className="w-full object-cover"
+                  className="w-full rounded-[30px] border border-[#777] object-cover"
                   loading="lazy"
                   decoding="async"
                 />
