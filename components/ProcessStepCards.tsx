@@ -7,21 +7,27 @@ export type ProcessStep = {
 };
 
 const rowClassName =
-  "flex w-full max-w-[312px] flex-col items-start gap-5 self-center sm:max-w-none lg:max-w-none lg:flex-row lg:flex-nowrap lg:items-stretch lg:justify-center lg:gap-[71px]";
+  "flex w-full max-w-[312px] flex-col items-start gap-5 self-center steps:max-w-none steps:flex-row steps:flex-nowrap steps:items-stretch steps:justify-center steps:gap-[72px]";
 
 const cardClassName =
-  "flex h-[237px] w-full flex-col items-start justify-center gap-1.5 rounded-lg bg-white p-4 text-right shadow-[0px_4px_2px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:-translate-y-1 lg:h-auto lg:justify-start lg:w-[310px] lg:gap-1.5 lg:p-4";
+  "flex h-[237px] w-full shrink-0 flex-col items-start justify-center gap-1.5 rounded-lg bg-white p-4 text-right shadow-[0px_4px_2px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:-translate-y-1 steps:h-full steps:justify-start steps:w-[310px] steps:gap-1.5 steps:p-4";
 
 export function ProcessStepCards({ steps }: { steps: ProcessStep[] }) {
   return (
     <div className={rowClassName}>
       {steps.map((s) => (
-        <div key={s.n} className={cardClassName}>
-          <StepNumberLabel n={s.n} className="text-5xl lg:text-[60px]" />
-          <h3 className="w-full text-right text-xl font-bold text-slate-900 lg:text-2xl">{s.title}</h3>
-          <p className="w-full text-right text-xl font-normal leading-normal text-slate-900 lg:text-xl lg:leading-7">
-            {s.body}
-          </p>
+        <div key={s.n} className="flex w-full flex-row items-center self-stretch steps:w-auto">
+          <div className={cardClassName}>
+            <StepNumberLabel n={s.n} className="text-5xl tracking-[0.16px] steps:text-[60px]" />
+            <div className="flex w-full flex-col items-start gap-1.5">
+              <h3 className="w-full text-right text-xl font-bold tracking-[0.16px] text-[#0f172a] steps:text-[24px]">
+                {s.title}
+              </h3>
+              <p className="w-full max-w-none text-right text-xl font-normal tracking-[0.16px] text-[#0f172a] steps:max-w-[280px] steps:text-[20px] steps:leading-7">
+                {s.body}
+              </p>
+            </div>
+          </div>
         </div>
       ))}
     </div>

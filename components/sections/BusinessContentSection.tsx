@@ -33,14 +33,14 @@ export function BusinessContentSection() {
 
     <MotionFade>
 
-      <section id="business-content" aria-labelledby="business-heading" className="border-b border-[#f6d199] bg-white px-4 pb-24 pt-16 sm:px-8 lg:px-16 xl:px-40 lg:pb-[310px] lg:pt-[100px]">
+      <section id="business-content" aria-labelledby="business-heading" className="border-b border-[#f6d199] bg-white px-4 pb-24 pt-16 sm:px-8 content:px-0 content:pb-[310px] content:pt-[100px]">
 
-        <div className="mx-auto flex max-w-[1450px] flex-col items-center gap-20 lg:gap-40">
+        <div className="mx-auto flex max-w-[1450px] flex-col items-center gap-20 content:gap-40">
 
-          <div className="grid w-full grid-cols-1 items-center gap-12 sm:max-w-[370px] sm:justify-items-center lg:max-w-none lg:grid-cols-[minmax(0,742px)_minmax(280px,628px)] lg:items-start lg:justify-center lg:gap-x-8 lg:gap-y-12 xl:gap-x-20">
+          <div className="mx-auto grid w-full max-w-[370px] grid-cols-1 items-center gap-12 justify-items-center content:mx-0 content:max-w-none content:grid-cols-[minmax(0,742px)_minmax(280px,795px)] content:items-start content:justify-center content:gap-x-8 content:gap-y-12 xl:gap-x-20">
 
-            <div className="relative order-2 w-full min-w-0 max-w-[742px] justify-self-center lg:justify-self-end">
-              <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden rounded-[30px] sm:min-h-[260px] lg:aspect-[742/552] lg:min-h-0">
+            <div className="relative order-2 w-full min-w-0 max-w-[370px] justify-self-center content:max-w-[795px] content:justify-self-end">
+              <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden rounded-[30px] sm:min-h-[260px] content:aspect-[795/591] content:min-h-0">
                 <img
                   src={figma.beforeAfterComposite}
                   alt="לפני ואחרי — עומס מלל וחוסר מיקוד במסר לעומת תוכן נקי, קריא וממוקד"
@@ -53,7 +53,7 @@ export function BusinessContentSection() {
 
 
 
-            <div className="order-1 flex w-full max-w-[300px] flex-col items-start gap-8 justify-self-center text-right sm:max-w-[370px] lg:max-w-[628px] lg:justify-self-start lg:gap-12">
+            <div className="order-1 flex w-full max-w-[300px] flex-col items-start gap-8 justify-self-center text-right sm:max-w-[370px] content:max-w-[628px] content:justify-self-start content:gap-12">
 
               <div className="flex w-full flex-col items-start gap-5">
 
@@ -68,9 +68,10 @@ export function BusinessContentSection() {
               </div>
 
               <p className="w-full text-lg font-semibold text-slate-900/60 lg:text-[22px]">
-
-                אני בונה אסטרטגיית תוכן שיווקית שמבדלת אתכם בשוק, תוך הבנת הסיפור הייחודי שלכם או של המוצר שלכם
-
+                אני בונה אסטרטגיית תוכן שיווקית שמבדלת אתכם בשוק,{" "}
+                <br className="hidden content:inline" />
+                תוך הבנת הסיפור הייחודי שלכם או של המוצר שלכם
+           
               </p>
 
               <div className="relative h-5 w-full max-w-[157px] lg:max-w-[339px]">
@@ -103,7 +104,7 @@ export function BusinessContentSection() {
 
                 rel="noopener noreferrer"
 
-                className="inline-flex shrink-0 items-center gap-2.5 self-start rounded-lg bg-[#e98c00] px-5 py-3 text-lg font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)]"
+                className="inline-flex shrink-0 items-center gap-2.5 self-start rounded-lg px-5 py-3 text-lg font-semibold"
 
               >
 

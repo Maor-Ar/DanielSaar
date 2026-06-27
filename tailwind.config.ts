@@ -20,6 +20,8 @@ export default {
       },
       screens: {
         about: "1135px",
+        content: "1435px",
+        steps: "1491px",
         lg: "1024px",
         xl: "1280px",
         "2xl": "1920px",

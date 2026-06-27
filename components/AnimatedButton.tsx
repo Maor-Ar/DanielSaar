@@ -4,17 +4,31 @@ import { motion, useReducedMotion } from "framer-motion";
 import { hoverButton } from "@/lib/motion";
 import type { ReactNode } from "react";
 
+const variantClassName = {
+  primary: "bg-accent text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)]",
+  secondary:
+    "border border-slate-900 bg-white text-slate-900 shadow-[0px_4px_2px_rgba(0,0,0,0.25)]",
+} as const;
+
+type ButtonVariant = keyof typeof variantClassName;
+
 type Props = {
   children: ReactNode;
   className?: string;
   href: string;
   target?: string;
   rel?: string;
+  variant?: ButtonVariant;
 };
 
-export function AnimatedButton({ children, className, href, target, rel }: Props) {
+export function AnimatedButton({ children, className, href, target, rel, variant = "primary" }: Props) {
   const reduce = useReducedMotion();
-  const linkProps = { href, target, rel, className };
+  const linkProps = {
+    href,
+    target,
+    rel,
+    className: [variantClassName[variant], className].filter(Boolean).join(" "),
+  };
 
   if (reduce) {
     return <a {...linkProps}>{children}</a>;

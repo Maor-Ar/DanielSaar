@@ -27,8 +27,8 @@ export function AboutSection() {
                   <div dir="ltr" className="order-2 flex items-center justify-center about:order-1 about:w-full about:max-w-md about:flex-1 about:gap-2">
                     <img src={figma.laurelLeft.mobile} alt="" className="h-[86px] w-[49px] shrink-0 object-contain about:hidden" />
                     <img src={figma.laurelLeft.desktop} alt="" className="hidden h-[86px] w-[49px] shrink-0 object-contain about:block" />
-                    <div dir="rtl" className="flex w-[182px] shrink-0 flex-col items-center text-center text-slate-900 about:w-auto about:gap-1 about:text-base">
-                      <p className="flex h-[27px] items-center justify-center text-base font-semibold leading-normal tracking-[0.16px] about:h-auto">
+                    <div dir="rtl" className="flex w-[182px] shrink-0 flex-col items-center gap-0.5 text-center text-slate-900 about:w-[316px] about:text-base">
+                      <p className="flex h-[27px] items-center justify-center text-base font-semibold leading-normal tracking-[0.16px] about:h-auto about:whitespace-nowrap">
                         כתיבה מבוססת הצלחה
                       </p>
                       <div className="text-base font-normal leading-normal tracking-[0.16px] about:hidden">
@@ -36,8 +36,10 @@ export function AboutSection() {
                         <p>שזכה לתמיכת קרנות קולנוע, </p>
                         <p>הופק כסרט קולנוע באורך מלא</p>
                       </div>
-                      <p className="hidden font-normal about:block">
-                        תסריט עלילתי פרי עטי, שזכה לתמיכת קרנות קולנוע, הופק כסרט קולנוע באורך מלא
+                      <p className="hidden text-base font-normal leading-normal tracking-[0.16px] about:block">
+                        תסריט עלילתי פרי עטי, שזכה לתמיכת קרנות קולנוע,
+                        <br />
+                        הופק כסרט קולנוע באורך מלא
                       </p>
                     </div>
                     <img src={figma.laurelRight.mobile} alt="" className="h-[86px] w-[49px] shrink-0 -scale-y-100 rotate-180 object-contain about:hidden" />

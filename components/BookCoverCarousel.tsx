@@ -16,13 +16,13 @@ const slides = [
 function SlideImage({ src, alt, priority }: { src: string | { mobile: string; desktop: string }; alt: string; priority?: boolean }) {
   if (typeof src === "string") {
     return (
-      <Image src={src} alt={alt} fill className="object-cover object-center" sizes="(max-width: 1023px) 85vw, 628px" priority={priority} />
+      <Image src={src} alt={alt} fill className="object-cover object-center" sizes="(max-width: 1434px) 85vw, 795px" priority={priority} />
     );
   }
   return (
     <>
-      <Image src={src.mobile} alt={alt} fill className="object-cover object-center lg:hidden" sizes="85vw" priority={priority} />
-      <Image src={src.desktop} alt={alt} fill className="hidden object-cover object-center lg:block" sizes="628px" priority={priority} />
+      <Image src={src.mobile} alt={alt} fill className="object-cover object-center content:hidden" sizes="85vw" priority={priority} />
+      <Image src={src.desktop} alt={alt} fill className="hidden object-cover object-center content:block" sizes="795px" priority={priority} />
     </>
   );
 }
@@ -49,13 +49,13 @@ export function BookCoverCarousel() {
 
   return (
     <div
-      className="relative w-full"
+      className="relative mx-auto w-full max-w-[370px] content:mx-0 content:max-w-none"
       role="region"
       aria-roledescription="carousel"
       aria-label="דוגמאות לספרים"
       tabIndex={0}
     >
-      <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden rounded-[20px] sm:min-h-[260px] lg:aspect-[742/552] lg:min-h-0">
+      <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden rounded-[20px] sm:min-h-[260px] content:aspect-[795/591] content:min-h-0">
         <EmblaCarouselArrows emblaApi={emblaApi} variant="overlay" />
         <div className="relative h-full w-full" ref={emblaRef}>
           <div className="flex h-full">
@@ -69,7 +69,7 @@ export function BookCoverCarousel() {
           </div>
         </div>
 
-        <div className="absolute bottom-2.5 left-1/2 z-10 flex h-3 w-14 -translate-x-1/2 items-center justify-center gap-1.5 lg:bottom-8 lg:h-5 lg:w-20" role="tablist" aria-label="מעבר בין תצוגות הספר">
+        <div className="absolute bottom-2.5 left-1/2 z-10 flex h-3 w-14 -translate-x-1/2 items-center justify-center gap-1.5 content:bottom-8 content:h-5 content:w-20" role="tablist" aria-label="מעבר בין תצוגות הספר">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -77,7 +77,7 @@ export function BookCoverCarousel() {
               role="tab"
               aria-selected={selected === i}
               className={`rounded-full transition-all duration-300 ${
-                selected === i ? "size-2.5 bg-white lg:size-3" : "size-2 bg-white/40 lg:size-2.5"
+                selected === i ? "size-2.5 bg-white content:size-3" : "size-2 bg-white/40 content:size-2.5"
               }`}
               onClick={() => emblaApi?.scrollTo(i)}
               aria-label={`תצוגת ספר ${i + 1}`}

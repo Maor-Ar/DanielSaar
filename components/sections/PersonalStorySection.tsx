@@ -28,14 +28,14 @@ const bullets = [
 export function PersonalStorySection() {
   return (
     <MotionFade>
-      <section id="personal-story" aria-labelledby="personal-heading" className="bg-white px-4 pb-24 pt-16 sm:px-8 lg:px-16 xl:px-40 lg:pb-[310px] lg:pt-[100px]">
-        <div className="mx-auto flex max-w-[1450px] flex-col items-center gap-20 lg:gap-40">
-          <div className="grid w-full grid-cols-1 items-center gap-12 sm:max-w-[370px] sm:justify-items-center lg:max-w-none lg:grid-cols-[minmax(280px,628px)_minmax(0,742px)] lg:items-start lg:justify-center lg:gap-x-8 lg:gap-y-12 xl:gap-x-20">
-            <div className="relative order-2 w-full min-w-0 max-w-[742px] justify-self-center lg:order-1 lg:justify-self-start">
+      <section id="personal-story" aria-labelledby="personal-heading" className="bg-white px-4 pb-24 pt-16 sm:px-8 content:px-0 content:pb-[310px] content:pt-[100px]">
+        <div className="mx-auto flex max-w-[1450px] flex-col items-center gap-20 content:gap-40">
+          <div className="mx-auto grid w-full max-w-[370px] grid-cols-1 items-center gap-12 justify-items-center content:mx-0 content:max-w-none content:grid-cols-[minmax(280px,795px)_minmax(0,742px)] content:items-start content:justify-center content:gap-x-8 content:gap-y-12 xl:gap-x-20">
+            <div className="relative order-2 w-full min-w-0 max-w-[370px] justify-self-center content:order-1 content:max-w-[795px] content:justify-self-start">
               <BookCoverCarousel />
             </div>
 
-            <div className="order-1 flex w-full max-w-[300px] flex-col items-start gap-8 justify-self-center text-right sm:max-w-[370px] lg:order-2 lg:max-w-[628px] lg:justify-self-end lg:gap-12">
+            <div className="order-1 flex w-full max-w-[300px] flex-col items-start gap-8 justify-self-center text-right sm:max-w-[370px] content:order-2 content:max-w-[628px] content:justify-self-end content:gap-12">
               <div className="flex w-full flex-col items-start gap-5">
                 <span className="rounded-full border border-[#262c3a] px-4 py-1.5 text-[15px] font-semibold text-slate-900">
                   אישי
@@ -49,15 +49,18 @@ export function PersonalStorySection() {
                 אני מגבשת את הזיכרונות שלכם לספר מרגש שמתעד את המורשת המשפחתית מתוך אמונה שלכל אדם יש סיפור ששווה לספר
               </p>
 
-              <div className="relative h-px w-full max-w-[157px] lg:max-w-[464px]">
-                <img src={figma.bookCarouselDivider} alt="" className="h-full w-full object-contain" aria-hidden />
+              <div className="relative h-5 w-full max-w-[157px] lg:max-w-[339px]">
+                <picture>
+                  <source media="(min-width: 1024px)" srcSet={figma.checklistBusiness.desktop} />
+                  <img src={figma.checklistBusiness.mobile} alt="" className="h-full w-full object-contain" loading="lazy" decoding="async" aria-hidden />
+                </picture>
               </div>
 
               <ul className="flex w-full list-disc flex-col gap-2.5 ps-7 text-lg font-semibold text-slate-900 marker:text-slate-900">
                 {bullets.map((item) => (
                   <li key={typeof item === "string" ? item : item.full}>
-                    <span className="max-lg:inline lg:hidden">{typeof item === "string" ? item : item.short}</span>
-                    <span className="hidden lg:inline">{typeof item === "string" ? item : item.full}</span>
+                    <span className="max-content:inline content:hidden">{typeof item === "string" ? item : item.short}</span>
+                    <span className="hidden content:inline">{typeof item === "string" ? item : item.full}</span>
                   </li>
                 ))}
               </ul>
@@ -66,7 +69,7 @@ export function PersonalStorySection() {
                 href={waPersonal}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex shrink-0 items-center gap-2.5 self-start rounded-lg bg-[#e98c00] px-5 py-3 text-lg font-semibold text-white shadow-[0px_4px_2px_rgba(0,0,0,0.25)]"
+                className="inline-flex shrink-0 items-center gap-2.5 self-start rounded-lg px-5 py-3 text-lg font-semibold"
               >
                 ספרו לי את הסיפור שלכם
                 <span className="inline-block size-5 shrink-0" aria-hidden>
