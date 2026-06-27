@@ -3,6 +3,7 @@ import { MotionFade } from "@/components/MotionFade";
 import { figma } from "@/lib/figma-assets";
 
 import { AnimatedButton } from "@/components/AnimatedButton";
+import { BeforeAfterCarousel } from "@/components/BeforeAfterCarousel";
 import { ProcessStepCards } from "@/components/ProcessStepCards";
 
 
@@ -40,15 +41,7 @@ export function BusinessContentSection() {
           <div className="mx-auto grid w-full max-w-[370px] grid-cols-1 items-center gap-12 justify-items-center content:mx-0 content:max-w-none content:grid-cols-[minmax(0,742px)_minmax(280px,795px)] content:items-start content:justify-center content:gap-x-8 content:gap-y-12 xl:gap-x-20">
 
             <div className="relative order-2 w-full min-w-0 max-w-[370px] justify-self-center content:max-w-[795px] content:justify-self-end">
-              <div className="relative aspect-[370/282] w-full min-h-[220px] overflow-hidden rounded-[30px] sm:min-h-[260px] content:aspect-[795/591] content:min-h-0">
-                <img
-                  src={figma.beforeAfterComposite}
-                  alt="לפני ואחרי — עומס מלל וחוסר מיקוד במסר לעומת תוכן נקי, קריא וממוקד"
-                  className="w-full rounded-[30px] border border-[#777] object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+              <BeforeAfterCarousel />
             </div>
 
 

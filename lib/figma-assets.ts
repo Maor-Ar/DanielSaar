@@ -9,6 +9,8 @@ const figmaAssets = {
   cardPersonalTop: { mobile: "/figma/71ff1037-3ee2-4dab-ac3a-b3f022ba4dfb.webp", desktop: "/figma/6312a868-1fd6-4b1f-b3b9-dcbdb4cccc21.webp" },
   cardBusinessTop: { mobile: "/figma/2fd6fcb7-f90d-4956-8596-a677234303d5.webp", desktop: "/figma/b03a2d19-2bfc-44ef-b076-0db74ad7700d.webp" },
   beforeAfterComposite: "/figma/Group%201000005891.png",
+  businessSlideBefore: "/figma/business-slide-before.png",
+  businessSlideAfter: "/figma/business-slide-after.png",
   bookCover: { mobile: "/figma/91c95415-3079-445f-b9d5-099008b017c8.webp", desktop: "/figma/d6bcf63b-b0fe-4f70-a554-b90b34e902ed.webp" },
   bookSlidePages: "/figma/book-slide-pages.webp",
   bookSlideBack: "/figma/book-slide-back.webp",
