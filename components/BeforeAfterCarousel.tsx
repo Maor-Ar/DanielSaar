@@ -53,7 +53,7 @@ export function BeforeAfterCarousel() {
       tabIndex={0}
     >
       <div className="relative aspect-[742/554] w-full overflow-hidden rounded-[20px]">
-        <EmblaCarouselArrows emblaApi={emblaApi} variant="overlay" />
+        <EmblaCarouselArrows emblaApi={emblaApi} variant="overlay" className="!text-slate-900 hover:!text-slate-900 [&_svg]:drop-shadow-none" />
         <div className="relative h-full w-full" ref={emblaRef}>
           <div className="flex h-full">
             {slides.map((slide, i) => (
