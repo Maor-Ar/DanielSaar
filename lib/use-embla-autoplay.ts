@@ -4,15 +4,14 @@ import Autoplay from "embla-carousel-autoplay";
 import type { EmblaCarouselType } from "embla-carousel";
 import { useEffect, useMemo } from "react";
 
+import { shouldReduceMotion } from "@/lib/use-a11y-reduced-motion";
+
 type Options = {
   delay?: number;
 };
 
 function shouldAutoplay() {
-  const root = document.documentElement;
-  return !(
-    root.dataset.reduceMotion === "true" || window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
+  return !shouldReduceMotion();
 }
 
 /** Returns an Embla Autoplay plugin; pauses when reduced motion is on. */

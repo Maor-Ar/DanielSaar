@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { fadeUp } from "@/lib/motion";
+import { useA11yReducedMotion } from "@/lib/use-a11y-reduced-motion";
 
 export function MotionFade({
   children,
@@ -13,7 +14,7 @@ export function MotionFade({
   className?: string;
   eager?: boolean;
 }) {
-  const reduce = useReducedMotion();
+  const reduce = useA11yReducedMotion();
   if (reduce) {
     return <div className={className}>{children}</div>;
   }

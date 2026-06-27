@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { hoverButton } from "@/lib/motion";
+import { useA11yReducedMotion } from "@/lib/use-a11y-reduced-motion";
 import type { ReactNode } from "react";
 
 const variantClassName = {
@@ -22,7 +23,7 @@ type Props = {
 };
 
 export function AnimatedButton({ children, className, href, target, rel, variant = "primary" }: Props) {
-  const reduce = useReducedMotion();
+  const reduce = useA11yReducedMotion();
   const linkProps = {
     href,
     target,

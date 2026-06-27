@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useId, useState } from "react";
 import { figma } from "@/lib/figma-assets";
+import { useA11yReducedMotion } from "@/lib/use-a11y-reduced-motion";
 
 const faqs = [
   {
@@ -26,7 +27,7 @@ const faqs = [
 export function FaqSection() {
   const baseId = useId();
   const [open, setOpen] = useState<number | null>(null);
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = useA11yReducedMotion();
 
   return (
     <section aria-labelledby="faq-heading" className="bg-white px-4 py-16 sm:px-8 lg:py-20">
@@ -56,25 +57,34 @@ export function FaqSection() {
                     <span className="flex-1">{item.q}</span>
                   </button>
                 </h3>
-                <motion.div
-                  id={panelId}
-                  role="region"
-                  aria-labelledby={buttonId}
-                  aria-hidden={!isOpen}
-                  initial={false}
-                  animate={{
-                    height: isOpen ? "auto" : 0,
-                    opacity: isOpen ? 1 : 0,
-                  }}
-                  transition={
-                    reduceMotion
-                      ? { duration: 0 }
-                      : { duration: 0.25, ease: [0.22, 1, 0.36, 1] }
-                  }
-                  className="overflow-hidden text-right text-base leading-8 text-slate-900"
-                >
-                  <p className="pb-4 pt-1">{item.a}</p>
-                </motion.div>
+                {reduceMotion ? (
+                  <div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={buttonId}
+                    aria-hidden={!isOpen}
+                    hidden={!isOpen}
+                    className="text-right text-base leading-8 text-slate-900"
+                  >
+                    <p className="pb-4 pt-1">{item.a}</p>
+                  </div>
+                ) : (
+                  <motion.div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={buttonId}
+                    aria-hidden={!isOpen}
+                    initial={false}
+                    animate={{
+                      height: isOpen ? "auto" : 0,
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden text-right text-base leading-8 text-slate-900"
+                  >
+                    <p className="pb-4 pt-1">{item.a}</p>
+                  </motion.div>
+                )}
               </div>
             );
           })}
