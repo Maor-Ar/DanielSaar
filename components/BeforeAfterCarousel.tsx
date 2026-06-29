@@ -15,18 +15,18 @@ const ROGA_EVENTS_URL = "https://www.rogaevents.com/";
  * scales down on smaller viewports, identical look at every width.
  */
 const slides = [
-  { src: figma.businessSlideBefore, alt: "לפני שדרוג התוכן — עומס מלל וחוסר מיקוד במסר באתר Roga Events", link: null },
   {
     src: figma.businessSlideAfter,
     alt: "אחרי שדרוג התוכן — תוכן נקי, קריא וממוקד באתר Roga Events",
     // Transparent hit-area over the baked-in "לצפייה באתר המלא" button (left 23px, top 505px, 205×32px within 742×554).
     link: { left: "3.099%", top: "91.155%", width: "27.628%", height: "5.776%" },
   },
+  { src: figma.businessSlideBefore, alt: "לפני שדרוג התוכן — עומס מלל וחוסר מיקוד במסר באתר Roga Events", link: null },
 ] as const;
 
 export function BeforeAfterCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", direction: "rtl" });
-  const [selected, setSelected] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", direction: "rtl", startIndex: 1 });
+  const [selected, setSelected] = useState(1);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -65,7 +65,7 @@ export function BeforeAfterCarousel() {
                     fill
                     className="object-contain object-center"
                     sizes="(max-width: 1434px) 85vw, 795px"
-                    priority={i === 0}
+                    priority={i === 1}
                   />
                   {slide.link ? (
                     <a
@@ -98,7 +98,7 @@ export function BeforeAfterCarousel() {
                 selected === i ? "size-2.5 bg-slate-900 content:size-3" : "size-2 bg-slate-900/30 content:size-2.5"
               }`}
               onClick={() => emblaApi?.scrollTo(i)}
-              aria-label={i === 0 ? "תצוגת לפני" : "תצוגת אחרי"}
+              aria-label={i === 1 ? "תצוגת לפני" : "תצוגת אחרי"}
             />
           ))}
         </div>
