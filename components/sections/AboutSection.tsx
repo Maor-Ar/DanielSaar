@@ -19,7 +19,7 @@ export function AboutSection() {
                     היכולת לזקק סיפור למהות שלו- היא המקצוע שלי. עם רקע מקצועי בכתיבת תסריטים, לימודי כתיבה בסם שפיגל ונסיון בבניית אסטרטגיית תוכן לעסקים, בחרתי להפוך זיכרונות, חוויות וסיפורים לתוכן אסטתי ומדויק. בין אם זה בניית מותג או כתיבת מורשת משפחתית, אני כאן כדי לתת לסיפור שלכם קול ומשמעות
                   </p>
                 </div>
-                <div className="flex w-full flex-col items-center gap-10 about:flex-row about:items-center about:justify-between about:gap-20">
+                <div className="flex w-full flex-col items-center gap-10 about:flex-row about:items-center about:gap-20">
                   <div className="order-1 flex flex-col items-center gap-1 about:order-2">
                     <p className="text-4xl font-bold text-[#e98c00] about:text-[50px]">7</p>
                     <p className="text-sm text-slate-900/60">שנות ניסיון</p>

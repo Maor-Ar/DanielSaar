@@ -25,8 +25,8 @@ const slides = [
 ] as const;
 
 export function BeforeAfterCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", direction: "rtl", startIndex: 1 });
-  const [selected, setSelected] = useState(1);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", direction: "rtl", startIndex: 0 });
+  const [selected, setSelected] = useState(0);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -65,7 +65,7 @@ export function BeforeAfterCarousel() {
                     fill
                     className="rounded-[20px] object-cover object-center"
                     sizes="(max-width: 1434px) 85vw, 795px"
-                    priority={i === 1}
+                    priority={i === 0}
                   />
                   {slide.link ? (
                     <a
@@ -98,7 +98,7 @@ export function BeforeAfterCarousel() {
                 selected === i ? "size-2.5 bg-slate-900 content:size-3" : "size-2 bg-slate-900/30 content:size-2.5"
               }`}
               onClick={() => emblaApi?.scrollTo(i)}
-              aria-label={i === 1 ? "תצוגת לפני" : "תצוגת אחרי"}
+              aria-label={i === 0 ? "תצוגת אחרי" : "תצוגת לפני"}
             />
           ))}
         </div>
