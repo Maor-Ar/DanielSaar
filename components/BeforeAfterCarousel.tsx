@@ -52,18 +52,18 @@ export function BeforeAfterCarousel() {
       aria-label="דוגמאות לפני ואחרי שדרוג תוכן"
       tabIndex={0}
     >
-      <div className="relative aspect-[742/554] w-full overflow-hidden rounded-[20px]">
+      <div className="relative aspect-[742/554] w-full overflow-hidden rounded-[20px] border border-slate-900/20 bg-white">
         <EmblaCarouselArrows emblaApi={emblaApi} variant="overlay" className="!text-slate-900 hover:!text-slate-900 [&_svg]:drop-shadow-none" />
-        <div className="relative h-full w-full" ref={emblaRef}>
+        <div className="relative h-full w-full overflow-hidden rounded-[20px]" ref={emblaRef}>
           <div className="flex h-full">
             {slides.map((slide, i) => (
-              <div className="min-w-0 shrink-0 grow-0 basis-full" key={slide.src}>
-                <div className="relative h-full w-full">
+              <div className="min-w-0 shrink-0 grow-0 basis-full overflow-hidden rounded-[20px]" key={slide.src}>
+                <div className="relative h-full w-full overflow-hidden rounded-[20px]">
                   <Image
                     src={slide.src}
                     alt={slide.alt}
                     fill
-                    className="object-contain object-center"
+                    className="rounded-[20px] object-cover object-center"
                     sizes="(max-width: 1434px) 85vw, 795px"
                     priority={i === 1}
                   />
